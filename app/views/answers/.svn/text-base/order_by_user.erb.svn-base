@@ -1,0 +1,23 @@
+<h1>Ver todas las respuestas para "<%= @survey.title %>"</h1>
+<br/>
+
+<% @answers = Answer.find(:all, :conditions => {:id_survey => @survey.id}, :order => 'group' ) %>
+<% @answers.each do |answer| %>
+<h2><%= count  %>. <%= question.question %></h2>
+
+<table>
+  <tr>
+    <th></th>
+  </tr>
+
+  <tr>
+    <td>- <%= answer.answer %></td>
+  </tr>
+
+</table>
+<% count = count + 1 %>
+<br/>
+<% end %>
+
+
+<%= link_to 'New Answer', new_answer_path %>

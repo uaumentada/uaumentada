@@ -1,0 +1,3 @@
+User: <%= @message.subject%>
+
+Body: <%= @message.body %>

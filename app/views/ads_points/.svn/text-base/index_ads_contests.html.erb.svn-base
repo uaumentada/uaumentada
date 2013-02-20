@@ -1,0 +1,29 @@
+<h1>Listados de puntos de publicidad</h1>
+
+<table>
+  <tr>
+    <th>Título</th>
+    <th>Campus</th>
+    <th>Mostrar</th>
+    
+  </tr>
+
+<% @ads_points.each do |ads_point| %>
+<tr  class="node <%= cycle("odd", "even") -%>">
+    <td><%= ads_point.title %></td>
+    <td><%= ads_point.campus.name %></td>
+    <% flag = false %>
+	<% @contest.ads_points.each do |ad| %>
+    	<% if ad.id == ads_point.id%>
+    		<td><%= link_to 'Eliminar', :action => :remove_ad_from_contest, :contest_id => @contest.id, :ads_point_id => ads_point.id %></td>
+     		<% flag = true %>    
+    	<% end %>
+    <% end %>
+    <% if !flag%>
+    	<td><%= link_to 'Asignar', :action => :assign_ad_to_contest, :contest_id => @contest.id, :ads_point_id => ads_point.id %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />

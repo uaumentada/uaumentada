@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/puc-aumentada/!svn/ver/300/trunk/pucaumentada/app/views/poi_types
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/297/trunk/pucaumentada/app/views/poi_types/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/297/trunk/pucaumentada/app/views/poi_types/_form.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/296/trunk/pucaumentada/app/views/poi_types/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/297/trunk/pucaumentada/app/views/poi_types/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/296/trunk/pucaumentada/app/views/poi_types/new.html.erb
+END
+index.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/300/trunk/pucaumentada/app/views/poi_types/index.json.erb
+END

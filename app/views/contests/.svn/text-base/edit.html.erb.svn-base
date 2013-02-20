@@ -1,0 +1,6 @@
+<h1>Editar concurso</h1>
+<hr />
+<%= render 'form' %>
+
+<%= link_to 'Ver', @contest %> |
+<%= link_to 'Cancelar', :my_contests %>

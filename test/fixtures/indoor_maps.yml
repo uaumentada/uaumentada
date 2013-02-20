@@ -1,0 +1,25 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  floor: 1
+  building_id: 1
+
+two:
+  floor: 1
+  building_id: 1
+
+# == Schema Information
+#
+# Table name: indoor_maps
+#
+#  id                 :integer         not null, primary key
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#  floor              :integer
+#  building_id        :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#
+

@@ -1,0 +1,28 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: 
+  description: 
+  price: 
+  user_id: 1
+
+two:
+  title: 
+  description: 
+  price: 
+  user_id: 1
+
+# == Schema Information
+#
+# Table name: market_items
+#
+#  id          :integer         not null, primary key
+#  title       :string(255)
+#  description :text
+#  price       :integer
+#  user_id     :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  campus_id   :integer
+#
+

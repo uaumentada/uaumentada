@@ -1,0 +1,18 @@
+class CreateEvents < ActiveRecord::Migration
+  def self.up
+    create_table :events do |t|
+      t.integer :user_id
+      t.text :description
+      t.string :lat
+      t.string :lng
+      t.integer :campus_id
+      t.integer :category_id
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :events
+  end
+end

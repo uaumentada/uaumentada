@@ -1,0 +1,13 @@
+
+xml.survey_id @survey.id
+xml.questions do
+  @questions.each do |question|
+    xml.question do
+      xml.type question.question_number
+      xml.id question.id
+      xml.question_asked question.question
+      xml.answers question.answers
+      end
+    end
+  end
+end

@@ -1,0 +1,6 @@
+<h2>Nueva pregunta para "<%= @survey.title%>"</h2>
+<hr />
+<%= render 'form' %>
+
+<!--<%= link_to 'Volver', :back %>-->
+

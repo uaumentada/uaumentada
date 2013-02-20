@@ -1,0 +1,412 @@
+
+<head>
+	<STYLE type=text/css><!--
+.menudiv {border:red 2px solid; z-index:10;  visibility: hidden; 
+ font-size:10pt;  width:350px; position:absolute; height:206px; background-color:white}
+//--></STYLE>
+	
+</head>
+
+<SCRIPT type=text/javascript><!--
+
+var nav=(document.layers);
+var n_6=(window.sidebar);
+if(nav)document.captureEvents(Event.MOUSEMOVE);
+if(n_6) document.addEventListener("mousemove",track,true);
+document.onmousemove=track;
+
+function track(e) 
+{
+  var x=(nav||n_6)?e.pageX:event.x; 
+  var y=(nav||n_6)?e.pageY:event.y;
+  x=parseInt(x);
+  y=parseInt(y);
+  isvis(x,y);
+}
+
+function isvis(x,y)
+{
+	var pos = $jQ('#tooltip').position(); // returns an object with the attribute top and left
+	var imgy = pos.top;  // top offset position
+	var imgx = pos.left; // left offset position
+	
+	
+	var min_x = imgx -100 + 60;
+	var max_x = imgx -100 + 220;
+	var min_y = imgy -100 + 80;
+	var max_y = imgy -100 + 166;
+	
+  if(nav)
+  {
+    if(document.linkmenu.visibility!="hide")
+    {
+      if(x<min_x||x>max_x||y<min_y||y>max_y)document.linkmenu.visibility="hide";
+    }
+  }
+  else if(n_6)
+  {
+    if(document.getElementById("linkmenu").style.visibility!="hidden")
+    {
+      if(x<min_x||x>max_x||y<min_y||y>max_y)document.getElementById("linkmenu").style.visibility="hidden";
+    }
+  }
+  else if(linkmenu.style.visibility!="hidden")
+  {
+    if(x<min_x||x>max_x||y<min_y||y>max_y)linkmenu.style.visibility="hidden";
+  }
+}
+
+function menu(n)
+{
+  if(nav)
+  {
+    document.linkmenu.visibility=(n!=0)?"visible":"hidden";
+  }
+  else if(n_6)
+  {
+    document.getElementById("linkmenu").style.visibility=(n!=0)?"visible":"hidden";
+  }	
+  else linkmenu.style.visibility=(n!=0)?"visible":"hidden";
+}
+
+function fakelocation(n)
+{
+  alert("This is target "+n+" ......\nreplace this link with your target URL");
+}
+
+// --></SCRIPT>
+
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<%= javascript_include_tag "googlemaps.js" %>
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true" %>
+<script LANGUAGE="JavaScript">
+var map;
+var marker = null;
+var NOT_SELECTED = -1;
+var circle;
+
+	jQuery(document).ready(function(){
+		jQuery("#survey_form").validate();
+	});
+	
+  function callAjax(method, value, target)
+  {
+    if(encodeURIComponent) {
+      var req = new AjaxRequest();
+      var params = "method=" + method + "&value=" + encodeURIComponent(value) + "&target=" + target;
+      req.setMethod("POST");
+      req.loadXMLDoc('/scripts/validate.php', params);
+    }
+  }
+
+
+var state = 'hidden';
+
+function option_change (sel){
+
+	var option = sel.selectedIndex;
+	set_option(option);
+}
+
+function set_option(option){
+	
+	if (option == 0 || option == NOT_SELECTED) { //courses
+		document.getElementById( "hideShow").style.visibility = 'visible';  
+		document.getElementById( "courses" ).style.visibility = 'visible';
+		document.getElementById( "map").style.visibility = 'hidden';
+	} 
+	else if (option == 3) //geolocalized
+	{
+		document.getElementById( "hideShow" ).style.visibility = 'hidden'; 
+		document.getElementById( "map").style.visibility = 'visible';
+		document.getElementById( "courses" ).style.visibility = 'hidden';  
+	}
+	else { 
+		document.getElementById( "hideShow" ).style.visibility = 'hidden'; 
+		document.getElementById( "map").style.visibility = 'hidden';
+		document.getElementById( "courses" ).style.visibility = 'hidden';  
+	} 
+}
+
+function showCreateNewCourse (){
+
+var div = document.getElementById('courses');
+var check = document.getElementById('new_course');
+if (check == null)
+{
+	var newdiv = document.createElement('div');
+		newdiv.setAttribute('id','new_course');
+    	newdiv.innerHTML = '<label for="initials" id="initials0" >Sigla:</label><input id="initials" name="initials" type="text" > </input><br/><label for="course_title" id="course0" >Nombre Curso: </label><input id="course_title" name="course_title" type="text" > </input>';
+    
+ 	div.appendChild(newdiv);
+ }
+}
+
+function on_load()
+{
+	
+	
+  <% if !@survey.id.nil?%> //Editing an existing survey
+   
+   var pri_lev = <%= @survey.privacy_level %>;
+   var opt = pri_lev -1;
+   set_option(opt);
+   set_map_and_addons(<%= @survey.lat %>,<%= @survey.lng %>)
+	
+<% else %> //New survey
+	set_option(NOT_SELECTED);
+
+  //centers the map one campus
+  var lat;
+  var lng;
+  	<%if !session[:university].nil?%>
+	    <% campus = Campus.where("university_id = " +session[:university].to_s).first %>
+		lat = <%= campus.lat %>;
+		lng = <%= campus.lng %>;
+	<%else%>
+		<% campus = Campus.first %>
+		lat = <%= campus.lat %>;
+		lng = <%= campus.lng %>;
+	<%end%>
+ set_map_and_addons(lat, lng)
+	
+<%end%>
+
+set_listeners();
+
+}
+
+//Resets the map to the new campus selected
+function campus_change(sel)
+{
+	var location = sel.options[sel.selectedIndex].value.split(",");
+	var lat = parseFloat(location[0]);
+	var lng = parseFloat(location[1]);
+
+	//Get the location of the selected campus
+	set_map_and_addons(lat, lng);
+
+	google.maps.event.addListener(marker, 'drag', function(event) {
+		
+	 	var lat = event.latLng.lat();
+	 	var lng = event.latLng.lng();
+  	
+  		circle.setCenter( new google.maps.LatLng(lat, lng));
+  	
+  		document.getElementById('survey_lat').value = lat;
+    	document.getElementById('survey_lng').value = lng;
+  	
+	});
+
+	google.maps.event.addListener(map, 'click', function(event){
+	
+	 	var lat = event.latLng.lat();
+	 	var lng = event.latLng.lng();
+	 
+     	document.getElementById('survey_lat').value = lat;
+     	document.getElementById('survey_lng').value = lng;
+
+
+		if (marker == null)
+		{
+ 			marker = new google.maps.Marker({
+      		position: new google.maps.LatLng(lat, lng),
+      		map: map,
+      		title:"Lugar de la encuesta"
+  		});
+  
+  		circle = new google.maps.Circle({
+    		center: new google.maps.LatLng(lat, lng),
+    		radius: 50,
+    		map: map,
+    		strokeColor: '#ff0000',
+    		strokeOpacity: 0.8,
+    		strokeWeight: 2,
+    		fillColor: '#F293A6',
+		    fillOpacity: 0.4
+  			});
+		}
+		else
+		{
+  			marker.setPosition( new google.maps.LatLng(lat, lng));
+  			circle.setCenter( new google.maps.LatLng(lat, lng));
+		}
+});
+}
+
+function set_map_and_addons(lat, lng)
+{
+	map = new google.maps.Map(document.getElementById('map_canvas'), {
+  		center: new google.maps.LatLng(lat, lng),
+  		zoom: 17,
+  		mapTypeId: google.maps.MapTypeId.HYBRID,
+  		disableDefaultUI: true
+	});
+	
+	marker = new google.maps.Marker({
+    	position: new google.maps.LatLng(lat, lng),
+    	map: map,
+    	title: "Lugar de la encuesta",
+    	draggable: true
+ 	});
+
+  circle = new google.maps.Circle({
+    center: new google.maps.LatLng(lat, lng),
+    radius: 50,
+    map: map,
+    strokeColor: '#ff0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#F293A6',
+    fillOpacity: 0.4,
+  });
+  
+  document.getElementById('survey_lat').value = lat;
+  document.getElementById('survey_lng').value = lng;
+}
+
+function set_listeners()
+{
+	google.maps.event.addListener(marker, 'drag', function(event) {
+		
+	 	var lat = event.latLng.lat();
+	 	var lng = event.latLng.lng();
+  	
+  		circle.setCenter( new google.maps.LatLng(lat, lng));
+  	
+  		document.getElementById('survey_lat').value = lat;
+    	document.getElementById('survey_lng').value = lng;
+  	
+	});
+
+	google.maps.event.addListener(map, 'click', function(event){
+	
+	 	var lat = event.latLng.lat();
+	 	var lng = event.latLng.lng();
+	 
+     	document.getElementById('survey_lat').value = lat;
+     	document.getElementById('survey_lng').value = lng;
+
+
+		if (marker == null)
+		{
+ 			marker = new google.maps.Marker({
+      			position: new google.maps.LatLng(lat, lng),
+      			map: map,
+      			title:"Lugar de la encuesta"
+  			});
+  
+  			circle = new google.maps.Circle({
+    			center: new google.maps.LatLng(lat, lng),
+    			radius: 50,
+    			map: map,
+    			strokeColor: '#ff0000',
+    			strokeOpacity: 0.8,
+    			strokeWeight: 2,
+    			fillColor: '#F293A6',
+		    	fillOpacity: 0.4
+  			});
+		}
+		else
+		{
+  			marker.setPosition( new google.maps.LatLng(lat, lng));
+  			circle.setCenter( new google.maps.LatLng(lat, lng));
+		}
+	});
+}
+
+</script>
+<body onload="on_load()">
+
+<div style=" width:50%; height:50%; float:left"> 
+	
+<%= form_for @survey, :html => {:id => 'survey_form'} do |f| %>
+  <% if @survey.errors.any? %>
+    <p>
+      <ul><font color="red">
+      <% @survey.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %></font>
+      </ul>
+    </p>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Título" %><font style="color:red">*</font> <br />
+    <%= f.text_field :title, :class => "required", :minlength => "4" %>
+  </div>
+  <div class="field">
+    <%= f.label "Descripción" %> <font style="color:gray">(opcional para colocar texto para identificar encuesta) </font> <br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label "Nivel de privacidad" %><br />
+    <%= f.select :privacy_level, [["1. Curso", "1"],["2. Código", "2"],["3. Pública","3"],["4. Geolocalizada","4"]], {}, :onchange => 'option_change(this)' %>
+   	
+		<A  id="tooltip" onmouseover=menu(1) href="javascript:\\">
+			<IMG  src="/images/help.png" border=0></A>
+		
+
+		<DIV  class=menudiv id="linkmenu">
+			<CENTER><B>Niveles de privacidad</B></CENTER>
+			<UL style="font-size:12px;">
+				<LI>1. <b>Curso:</b> Disponible a través de un código hexadecimal o QR, se agrupará localmente en un curso para mantener un orden
+				<LI>2. <b>Código:</b> Disponible a través de un código hexadecimal o QR.
+				<LI>3. <b>Pública:</b> Disponible para cualquier persona de la comunidad universitaria.
+				<LI>4. <b>Geolocalizada:</b> Disponible por cualquier persona dentro de cierta ubicación indicada en el mapa.</LI>
+			</UL>
+		</DIV>
+	
+    
+
+  </div>
+
+  <div class="field" id="hideShow" >
+	<label for="curso"> Asignar encuesta a un curso<label><br/>
+		<% if !@survey.nil? && !@survey.course_id.nil? %>
+			<%@course = Course.new%>
+			<%@course.id = @survey.course_id%>
+			<%end%>
+	<%= collection_select(:course, :id, @courses, :id, :initials,  options ={:prompt => "Seleccione un curso"}) %>
+	<button onClick="showCreateNewCourse(this)" type="button"> o cree un curso nuevo </button>
+  </div>
+  
+<div id="courses" style="visibility:'hidden';"></div>
+
+<!-- Guarda la ubicación del evento -->
+	<input type="text" id="survey_lat"  name="survey[lat]" HIDDEN></input>
+	<input type="text" id="survey_lng" name="survey[lng]" HIDDEN></input>    
+</div>
+  <!-- espacio del canvas del mapa -->
+<div id="map" style=" width:50%; height:50%; float:right;visibility:hidden;">
+<% @campus = Campus.new %>
+	<%if !session[:university].nil?%> <!-- Super admin -->
+	    <% campus = Campus.where("university_id = " +session[:university].to_s).first %>
+	    <% if !@survey.id.nil? && !@survey.lat.nil?%> 
+			<% @campus.name = @survey.lat.to_s + "," + @survey.lng.to_s%>
+		<%else%>
+			<% @campus.name = campus.lat + ","+ campus.lng %>
+		<% end%>
+		Campus de la encuesta <%= select("campus", "name", Campus.where("university_id = " +session[:university].to_s).order("name ASC").collect {|r| [ r.name, r.lat + "," + r.lng ] },  {:prompt => 'Selecciona un Campus'}, {:onchange => 'campus_change(this)'}) %></center>
+	<%else%>
+		<% campus = Campus.first %>
+		<% if !@survey.id.nil? && !@survey.lat.nil?%>
+			<% @campus.name = @survey.lat.to_s + "," + @survey.lng.to_s%>
+		<%else%>
+			<% @campus.name = campus.lat + ","+ campus.lng %>
+		<%end%>
+		Campus de la encuesta: <%= select("campus", "name", Campus.find(:all,:order => "name ASC").collect {|r| [ r.name, r.lat + "," + r.lng ] },  {:prompt => 'Selecciona un Campus'}, {:onchange => 'campus_change(this)'}) %></center>
+	<%end%>
+
+	<br /><br />
+  <center><div id="map_canvas" style="width:330px; height:390px;"></div></center>
+</div>
+  
+  <div class="actions">
+    <%= f.submit 'Aceptar' %> <%= link_to "Cancelar", :back, :confirm => "Seguro que deseas cancelar? No se guardarán los cambios efectuados"%>
+  </div>  
+  
+<% end %>
+<font style="color:red"> *campos obligatorios</font> 
+</body>

@@ -1,0 +1,6 @@
+<%= link_to '<--Volver', :back %>
+<h1>Editar artículo del Mercado</h1>
+<hr />
+<%= render 'form' %>
+
+

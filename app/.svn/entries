@@ -1,0 +1,43 @@
+10
+
+dir
+391
+https://subversion.assembla.com/svn/puc-aumentada/trunk/pucaumentada/app
+https://subversion.assembla.com/svn/puc-aumentada
+
+
+
+2012-08-17T03:09:11.698347Z
+390
+MariAcuna
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a014a78d-83d0-4634-9677-7158e3c5b366
+
+controllers
+dir
+
+mailers
+dir
+
+views
+dir
+
+helpers
+dir
+
+models
+dir
+

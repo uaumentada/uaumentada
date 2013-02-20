@@ -1,0 +1,4 @@
+{"market_item":[
+ <%= raw @market_items.map{|item| '{"id":"' +"#{item.id}" +'","title":"' + "#{item.title}" +  '","description":"' +"#{item.description}" +'","price":"' +"#{item.price}" +'","username":"' + "#{item.user.email}" +'","campus":"' + "#{item.campus.name}"+  '"}' }.join(",") %>
+]}
+

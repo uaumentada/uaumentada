@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @question.type %>
+</p>
+
+<p>
+  <b>Question:</b>
+  <%= @question.question %>
+</p>
+
+<p>
+  <b>Mandatory:</b>
+  <%= @question.mandatory %>
+</p>
+
+<p>
+  <b>Help:</b>
+  <%= @question.help %>
+</p>
+
+<p>
+  <b>Answers:</b>
+  <%= @question.answers %>
+</p>
+
+<p>
+  <b>Question number:</b>
+  <%= @question.question_number %>
+</p>
+
+<p>
+  <b>Survey:</b>
+  <%= @question.survey_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>

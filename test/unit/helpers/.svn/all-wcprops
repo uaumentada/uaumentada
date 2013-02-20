@@ -1,0 +1,137 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/puc-aumentada/!svn/ver/296/trunk/pucaumentada/test/unit/helpers
+END
+poi_types_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/296/trunk/pucaumentada/test/unit/helpers/poi_types_helper_test.rb
+END
+vertex_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/263/trunk/pucaumentada/test/unit/helpers/vertex_helper_test.rb
+END
+surveys_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/43/trunk/pucaumentada/test/unit/helpers/surveys_helper_test.rb
+END
+answers_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/56/trunk/pucaumentada/test/unit/helpers/answers_helper_test.rb
+END
+market_items_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/263/trunk/pucaumentada/test/unit/helpers/market_items_helper_test.rb
+END
+categories_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/puc-aumentada/!svn/ver/296/trunk/pucaumentada/test/unit/helpers/categories_helper_test.rb
+END
+menus_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/puc-aumentada/!svn/ver/263/trunk/pucaumentada/test/unit/helpers/menus_helper_test.rb
+END
+campus_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/290/trunk/pucaumentada/test/unit/helpers/campus_helper_test.rb
+END
+universities_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/290/trunk/pucaumentada/test/unit/helpers/universities_helper_test.rb
+END
+questions_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/puc-aumentada/!svn/ver/43/trunk/pucaumentada/test/unit/helpers/questions_helper_test.rb
+END
+contact_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/452/trunk/pucaumentada/test/unit/helpers/contact_helper_test.rb
+END
+start_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/43/trunk/pucaumentada/test/unit/helpers/start_helper_test.rb
+END
+users_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/43/trunk/pucaumentada/test/unit/helpers/users_helper_test.rb
+END
+contests_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/puc-aumentada/!svn/ver/263/trunk/pucaumentada/test/unit/helpers/contests_helper_test.rb
+END
+tokens_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/196/trunk/pucaumentada/test/unit/helpers/tokens_helper_test.rb
+END
+ads_points_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/puc-aumentada/!svn/ver/282/trunk/pucaumentada/test/unit/helpers/ads_points_helper_test.rb
+END
+events_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/119/trunk/pucaumentada/test/unit/helpers/events_helper_test.rb
+END
+indoor_mapping_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/263/trunk/pucaumentada/test/unit/helpers/indoor_mapping_helper_test.rb
+END
+professors_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/puc-aumentada/!svn/ver/263/trunk/pucaumentada/test/unit/helpers/professors_helper_test.rb
+END
+push_messages_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/puc-aumentada/!svn/ver/263/trunk/pucaumentada/test/unit/helpers/push_messages_helper_test.rb
+END
+sessions_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/43/trunk/pucaumentada/test/unit/helpers/sessions_helper_test.rb
+END
+pois_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/226/trunk/pucaumentada/test/unit/helpers/pois_helper_test.rb
+END

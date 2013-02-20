@@ -1,0 +1,43 @@
+<h1>Listado de eventos <button><%= link_to 'Crear Evento', new_event_path %></button></h1>
+<hr />
+<%= form_tag({:controller => "events", :action => "user_events"}, :method => :get) do %>
+  
+    <%= text_field_tag "searchbox", params[:searchbox] %>
+    <%= submit_tag "Buscar", :name => nil %>
+  
+<% end %>
+<br/>
+<% if @events.size == 0 %>
+No hay eventos para mostrar
+<br />
+<% else %>
+<table>
+  <tr>
+    <th><%= sortable "title", "Título" %></th>
+    <th><%= sortable "campus_id", "Campus" %></th>
+    <th><%= sortable "init_date", "Fecha Inicio" %></th>
+    <th><%= sortable "end_date", "Fecha Término" %></th>
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+<% @events.each do |event| %>
+     <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= event.title %></td>
+    <td><%= event.campus.name %></td>
+    <td><%= event.init_date.strftime("%d/%m/%Y")%></td>
+    <td><%= event.end_date.strftime("%d/%m/%Y") %></td>
+    <td class="viewpin"><%= link_to ' ', event, :class => "linkable" %></td>
+    <td class="edit"><%= link_to '   ', edit_event_path(event), :class => "linkable"  %></td>
+    <td class="delete"><%= link_to ' ', event, :confirm => 'Estás seguro? esta acción es irreversible', :method => :delete, :class => "linkable"  %></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<center><%= paginate @events %></center>
+
+
+
+<% end %>
+<br />

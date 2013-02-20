@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Phone:</b>
+  <%= @token.phone_id %>
+</p>
+
+<p>
+  <b>Platform:</b>
+  <%= @token.platform %>
+</p>
+
+<p>
+  <b>Last lat:</b>
+  <%= @token.last_lat %>
+</p>
+
+<p>
+  <b>Last lng:</b>
+  <%= @token.last_lng %>
+</p>
+
+
+<%= link_to 'Edit', edit_token_path(@token) %> |
+<%= link_to 'Back', tokens_path %>

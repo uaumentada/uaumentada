@@ -1,0 +1,93 @@
+<script>
+	jQuery(document).ready(function(){
+		jQuery("#form_menu").validate();
+	});
+	
+  function callAjax(method, value, target)
+  {
+    if(encodeURIComponent) {
+      var req = new AjaxRequest();
+      var params = "method=" + method + "&value=" + encodeURIComponent(value) + "&target=" + target;
+      req.setMethod("POST");
+      req.loadXMLDoc('/scripts/validate.php', params);
+    }
+  }
+</script>
+<hr />
+<%= form_for @menu, :html => { :multipart => true, :id => 'form_menu' }  do |f| %>
+  <% if @menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menu.errors.count, "error") %> prohiben que se guarde el menu:</h2>
+
+      <ul>
+      <% @menu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <p id="notice"><%=flash[:notice]%></p>
+<div style=" width:50%; height:100%; float:left">
+  <div class="field">
+    <%= f.label "Título:" %><font style="color:red">*</font><br />
+    <%= f.text_field :title, :class => "required", :minlength => "3" %>
+  </div>
+  <div class="field">
+    <%= f.label "Descripción:" %><br />
+    <textarea cols="30"  size="30" style="resize: none;" id="menu_description" name="menu[description]" rows="6"><%= @menu.description%></textarea>
+  </div>
+    <div class="field">
+    <%= f.label "Precio:"%><font style="color:red">*</font><br />
+    $<%= f.text_field :price, :class => "number_required", :minlength => "3" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label "Imagen:"%><br /> <font color="gray">(Tamaño menor a 2MB, Formato jpeg o png)</font>
+    <%= f.file_field :image %>
+  </div>
+    <% if @menu.image? %>
+	<input type="checkbox" name="delete_image" value="delete"> Eliminar imagen<br>
+	<%= image_tag @menu.image.url(:medium), :title => "imagen actual" unless !@menu.image? %>
+  <% end %>
+ 
+ 
+    <div align= "center" class="actions">
+    <%= f.submit "Aceptar"%>
+  </div>
+  <font style="color:red"> *campos obligatorios</font> 
+  </div>
+  
+ 
+ 
+  
+<div style=" width:50%; height:100%; float:right"> 
+	
+	Días disponibles
+  <div class="field">
+  	&nbsp;&nbsp;L  &nbsp;&nbsp;&nbsp;&nbsp;M &nbsp;&nbsp;&nbsp; M &nbsp;&nbsp;&nbsp; J&nbsp;&nbsp;&nbsp; &nbsp;V &nbsp;&nbsp;&nbsp;&nbsp;S&nbsp;&nbsp;&nbsp;&nbsp;D <br/>
+    <%= f.check_box :monday %> 
+    <%= f.check_box :tuesday %>
+    <%= f.check_box :wednesday %> 
+    <%= f.check_box :thursday %> 
+    <%= f.check_box :friday %>
+    <%= f.check_box :saturday %>
+    <%= f.check_box :sunday %>
+  
+  </div> 
+	
+	 <div class="field">
+    <%= f.label "Inicio disponibilidad"%><br />
+    <%= f.calendar_date_select :init_date, :embedded => true,  :time => false %>
+  </div>
+  <div class="field">
+    <%= f.label "Fecha fin disponibilidad"%><br />
+    <%= f.calendar_date_select :date, :embedded => true,  :time => false %>
+  </div>
+
+
+</div>
+  <input type="text" id="menu_poi_id" name="menu[poi_id]" value="<%= @poi_id %>" HIDDEN></input>
+  
+
+<% end %>

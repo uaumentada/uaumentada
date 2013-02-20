@@ -1,0 +1,57 @@
+<h1>Listado de mis edificios <button><%= link_to 'Nuevo edificio', :new_building %></button></h1>
+<hr />
+<%= form_tag({:controller => "pois", :action => "my_buildings"}, :method => :get) do %>
+  
+    <%= text_field_tag "searchbox", params[:searchbox] %>
+    <%= submit_tag "Buscar", :name => nil %>
+  
+<% end %>
+<% if @pois.size == 0 %>
+<br/>
+No hay edificios para mostrar
+<br />
+<% else %>
+<br />
+Escoje un edificio para ver más opciones
+<br/>
+<table>
+  <tr>
+    <th><%= sortable "pois.name", "Nombre" %></th>
+    <th><%= sortable "campus_id", "Campus" %></th>
+    <% if !@my_buildings && (!session[:admin].nil? || !session[:super_admin].nil?)%>
+    	<th>Creado por</th>
+    <%end%>
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pois.each do |poi| %>
+  <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= link_to poi.name, poi , :class => "linkable"%></td>
+    <td><%= poi.campus.name %></td>
+    <% if !@my_buildings && (!session[:admin].nil? || !session[:super_admin].nil?)%>
+    	<td> <%= poi.user.email %></td>
+    <%end%>
+    <td class="viewpin" align="center"><%= link_to '', poi , :class => "linkable"%></td>
+    <% if poi.user_id == session[:user] || !session[:admin].nil? || !session[:super_admin].nil?%>
+    <td class="edit" align="center"><%= link_to '', {:controller => "pois", :action => "edit_building", :id => poi.id}, :class => "linkable"%></td>
+    <% else %>
+    <td></td>
+    <% end %>
+    <% if poi.user_id == session[:user] || !session[:admin].nil? || !session[:super_admin].nil? %>
+    <td class="delete" align="center"><%= link_to '', { :controller => "pois", :action => "destroy_poi", :id => poi.id, :from => "my_buildings"}, :class => "linkable", :confirm => "Estás seguro que deseas eliminar este edificio?" %></td>
+    <% else %>
+    <td></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br />
+<center><%= paginate @pois %></center>
+

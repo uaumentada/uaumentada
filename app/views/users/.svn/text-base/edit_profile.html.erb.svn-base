@@ -1,0 +1,5 @@
+<h1>Editar perfil</h1>
+<hr/><br />
+<%= render 'formprofile' %>
+
+<%= link_to 'Volver', :back %>

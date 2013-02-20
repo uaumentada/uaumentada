@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/puc-aumentada/!svn/ver/379/trunk/pucaumentada/app/views/sessions
+END
+special.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/550/trunk/pucaumentada/app/views/sessions/special.html.erb
+END
+new_login.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/541/trunk/pucaumentada/app/views/sessions/new_login.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/puc-aumentada/!svn/ver/290/trunk/pucaumentada/app/views/sessions/new.html.erb
+END

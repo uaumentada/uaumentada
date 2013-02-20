@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/puc-aumentada/!svn/ver/377/trunk/pucaumentada/app/views/events
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/puc-aumentada/!svn/ver/563/trunk/pucaumentada/app/views/events/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/puc-aumentada/!svn/ver/582/trunk/pucaumentada/app/views/events/_form.html.erb
+END
+no_permission.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/583/trunk/pucaumentada/app/views/events/no_permission.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/puc-aumentada/!svn/ver/427/trunk/pucaumentada/app/views/events/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/puc-aumentada/!svn/ver/562/trunk/pucaumentada/app/views/events/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/puc-aumentada/!svn/ver/119/trunk/pucaumentada/app/views/events/new.html.erb
+END
+index.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/puc-aumentada/!svn/ver/424/trunk/pucaumentada/app/views/events/index.json.erb
+END

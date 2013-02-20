@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/puc-aumentada/!svn/ver/370/trunk/pucaumentada/app/views/indoor_maps
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/576/trunk/pucaumentada/app/views/indoor_maps/_form.html.erb
+END
+indoor_map.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/puc-aumentada/!svn/ver/576/trunk/pucaumentada/app/views/indoor_maps/indoor_map.html.erb
+END
+_all.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/258/trunk/pucaumentada/app/views/indoor_maps/_all.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/254/trunk/pucaumentada/app/views/indoor_maps/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/437/trunk/pucaumentada/app/views/indoor_maps/new.html.erb
+END

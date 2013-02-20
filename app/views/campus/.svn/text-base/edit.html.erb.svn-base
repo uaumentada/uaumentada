@@ -1,0 +1,6 @@
+<%= link_to '<--Volver', campus_path %><br /><br />
+<h1>Editar campus</h1><hr />
+<br />
+<%= render 'form_edit' %>
+
+

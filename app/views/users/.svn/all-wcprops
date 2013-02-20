@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/puc-aumentada/!svn/ver/390/trunk/pucaumentada/app/views/users
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/puc-aumentada/!svn/ver/390/trunk/pucaumentada/app/views/users/edit.html.erb
+END
+_formpassword.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/puc-aumentada/!svn/ver/581/trunk/pucaumentada/app/views/users/_formpassword.html.erb
+END
+edit_profile.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/581/trunk/pucaumentada/app/views/users/edit_profile.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/puc-aumentada/!svn/ver/439/trunk/pucaumentada/app/views/users/index.html.erb
+END
+edit_password.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/puc-aumentada/!svn/ver/531/trunk/pucaumentada/app/views/users/edit_password.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/puc-aumentada/!svn/ver/439/trunk/pucaumentada/app/views/users/new.html.erb
+END
+_form_admin.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/383/trunk/pucaumentada/app/views/users/_form_admin.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/puc-aumentada/!svn/ver/551/trunk/pucaumentada/app/views/users/show.html.erb
+END
+profile.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/581/trunk/pucaumentada/app/views/users/profile.html.erb
+END
+new_admin.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/383/trunk/pucaumentada/app/views/users/new_admin.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/puc-aumentada/!svn/ver/541/trunk/pucaumentada/app/views/users/_form.html.erb
+END
+_formprofile.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/581/trunk/pucaumentada/app/views/users/_formprofile.html.erb
+END
+no_permission.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/puc-aumentada/!svn/ver/188/trunk/pucaumentada/app/views/users/no_permission.html.erb
+END

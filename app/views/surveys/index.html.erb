@@ -1,0 +1,83 @@
+<h1>Lista de Encuestas <button><%= link_to "Crear encuesta", new_survey_path %></button></h1>
+
+<hr/>
+<%= form_tag({:controller => "surveys", :action => "index"}, :method => :get) do %>
+  
+    <%= text_field_tag "searchbox", params[:searchbox] %>
+    <%= submit_tag "Buscar", :name => nil %>
+  
+<% end %>
+
+<% if @surveys.count == 0 %>
+
+	No hay encuestas para mostrar
+<%else%>
+
+<table>
+  <tr>
+    <th><%= sortable "title", "Título" %></th>
+    <th>Descripción</th>
+    <th><%= sortable "privacy_level", "Nivel de privacidad" %></th>
+    <th>Publicar como</th>
+    <th><%= sortable "code", "Código" %></th>
+    <th><%= sortable "course_id.initials", "Curso" %></th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+
+  <th></th>
+
+  </tr>
+
+<% @surveys.each do |survey| %>
+  <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= link_to survey.title, :controller => :questions, :action => :survey_questions, :survey_id => survey.id %></td>
+    <td><%= survey.description %></td>
+    <td><center><%if survey.privacy_level == Survey.privacy['Curso'] %> Curso 
+    <%elsif survey.privacy_level == Survey.privacy['Codigo'] %> Código
+    <%elsif survey.privacy_level == Survey.privacy['Publica'] %> Pública
+    <%elsif survey.privacy_level == Survey.privacy['Geolocalizada'] %> Geolocalizada
+    <%else %> Offline <%end %></center>
+    </td>
+<% if survey.privacy_level == Survey.privacy['AlumnosCerrada'] %>
+<td align="center"><%= button_to 'Curso', :action => :publish, :survey_id => survey.id %></td>
+<% elsif survey.privacy_level == Survey.privacy['CodigoCerrada'] %>
+<td align="center"><%= button_to 'Código', :action => :publish, :survey_id => survey.id %></td>
+<% elsif survey.privacy_level == Survey.privacy['PublicaCerrada'] %>
+<td align="center"><%= button_to 'Pública', :action => :publish, :survey_id => survey.id %></td>
+<% elsif survey.privacy_level == Survey.privacy['GeolocalizadaCerrada'] %>
+<td align="center"><%= button_to 'Geolocalizada', :action => :publish, :survey_id => survey.id %></td>
+<%else%>
+<td align="center"><%= button_to 'Cerrar', :controller => :surveys, :action => :close_survey, :survey_id => survey.id %></td>
+<% end %>
+
+
+    <td><center><%if survey.privacy_level == Survey.privacy['Codigo'] || survey.privacy_level == Survey.privacy['Curso']%> <%= survey.code %>
+    <% else %> 
+          ---
+	<%end%></center>
+    </td>
+    <td><center><%if survey.privacy_level == Survey.privacy['Curso'] && survey.course_id %> 
+    <% course = Course.find(survey.course_id)%> 
+    <%= course.initials %>
+    <% else %> 
+          ---
+<%end%></center>
+    </td>
+    <!--<td><%= survey.user_id %></td>-->
+    <!--<td><%= link_to 'Ver', survey %></td>-->
+    
+   
+<% if Answer.find(:all, :conditions => {:survey_id => survey.id}).count > 0 %>
+    <td><%= button_to 'Ver Respuestas', :controller => :answers, :action => :view_answers, :survey_id => survey.id %></td>
+<% else %>
+    <td class="edit"><%= link_to '', edit_survey_path(survey), :class => "linkable" %></td>
+<% end %>
+ <td class="delete"><%= link_to '', survey, :confirm => 'Va a eliminar una encuesta, esta acción es irreversible', :method => :delete, :class => "linkable" %></td>
+ 
+  </tr>
+<% end %>
+</table>
+<%end%>
+<center><%= paginate @surveys %></center>
+<br />
+

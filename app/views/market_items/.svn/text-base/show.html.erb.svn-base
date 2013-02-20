@@ -1,0 +1,25 @@
+<%= link_to '<--Volver', :back %>
+<p id="notice"><%= notice %></p>
+
+  <h1><%= @market_item.title %> - $<%= @market_item.price.humanize %></h1>
+<hr/>
+<b>Usuario que publica:</b> <%= @market_item.user.email%><% if !@market_item.user.university.nil?%>@<%= @market_item.user.university.email%><%end%>
+<p>
+  <b>Campus:</b>
+    <%if !@market_item.campus.nil? %>
+    	<%= @market_item.campus.name %>
+    <% else %>
+    	No definido
+    <%end%>
+</p>
+<p>
+  <b>Descripción:</b>
+  <%= @market_item.description %>
+</p>
+  
+</p>
+
+<% if @market_item.user.id == session[:user]%>
+	<button><%= link_to 'Editar', edit_market_item_path(@market_item) %> </button>
+	<% end%>
+

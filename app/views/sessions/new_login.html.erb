@@ -1,0 +1,100 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Login Box HTML Code - www.PSDGraphics.com</title>
+<link href="login-box.css" rel="stylesheets" type="text/css" />
+</head>
+<script LANGUAGE="JavaScript">
+
+function showForgotPass (email){
+
+alert('bla');
+
+var div = document.getElementById('courses');
+var check = document.getElementById('new_course');
+if (check == null)
+{
+	var newdiv = document.createElement('div');
+		newdiv.setAttribute('id','new_course');
+    	newdiv.innerHTML = '<label for="initials" id="initials0" >Sigla:</label><input id="initials" name="initials" type="text" > </input><br/><label for="course_title" id="course0" >Nombre Curso: </label><input id="course_title" name="course_title" type="text" > </input>';
+    
+ 	div.appendChild(newdiv);
+ }
+}
+
+function option_change (sel){
+
+	var selectedIndex = sel.selectedIndex;
+	var email = sel[selectedIndex].text;
+	if(email == "uc.cl")
+	{
+		//showForgotPass();
+		show("ForgetPassUC");
+	}
+	else
+	{
+		hide("ForgetPassUC");
+	}
+	
+}
+
+  function show(ele) {
+         var srcElement = document.getElementById(ele);
+         if(srcElement != null) {
+	   if(srcElement.style.display == "none") {
+                   srcElement.style.display='block';
+            }
+            return false;
+       }
+  }
+  
+  function hide(ele)
+  {
+  	 var srcElement = document.getElementById(ele);
+         if(srcElement != null) {
+	   if(srcElement.style.display == "block") {
+     		  srcElement.style.display= 'none';
+   	    }
+            return false;
+       }
+  }
+
+
+</script>
+
+<body>
+<center>
+<div id="login-box">
+		<% if flash[:notice] %>
+			<span style="color:red;"> <%= flash[:notice] %></span>
+		<% end %>
+		<%= form_tag :log_user, :method => 'POST' do %>
+			<div align="vertical-align: right"  >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usuario:	
+				<input name="username" class="form-login" align="left" title="Username" value="" size="8" maxlength="2048" /> @<%= select("university", "id", University.all.collect {|r| [ r.email, r.id ] }, {}, {:onchange => 'option_change(this)'})%>
+			</div>
+			<br/>							
+			<div align="vertical-align:right">Contraseña:
+				<input name="password" align="left" type="password" class="form-login" title="Password" value="" size="20" maxlength="2048" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			</div>
+			<br />
+			<center>
+				<button type="submit" alt="Enviar">Iniciar Sesión</button><br />
+				<DIV ID="ForgetPassUC" style="display:block">
+				
+				<a title="Recuperar Clave UC" onclick="window.open('https://www4.uc.cl/admclaveuc/jsp/form_selecciona_metodo.jsp','popup','width=500,height=500,scrollbars=no,resizable=no,toolbar=no,directories=no,location=no,menubar=no,status=no,left=0,top=0'); return false">Recuperar Clave UC</a>
+				<br />
+				</DIV>
+			</center>
+		<% end %> 
+</div>
+
+ 
+
+</center>
+<div align="right">
+	<br />
+	Ingresa como <%= link_to 'Usuario especial', :special_user %>
+</div>
+
+</body>
+</html>
+

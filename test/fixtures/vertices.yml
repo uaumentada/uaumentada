@@ -1,0 +1,24 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  building_id: 1
+  lat: 1.5
+  lng: 1.5
+
+two:
+  building_id: 1
+  lat: 1.5
+  lng: 1.5
+
+# == Schema Information
+#
+# Table name: vertices
+#
+#  id          :integer         not null, primary key
+#  building_id :integer
+#  lat         :float
+#  lng         :float
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+

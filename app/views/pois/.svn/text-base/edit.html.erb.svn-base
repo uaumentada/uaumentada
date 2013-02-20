@@ -1,0 +1,6 @@
+<%= link_to '<--Volver', :back %>
+<br/><br /> 
+<h1>Editar punto</h1>
+
+<%= render 'form' %>
+

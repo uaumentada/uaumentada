@@ -1,0 +1,10 @@
+<br/>
+<div id="gallery">
+  <% @indoor_maps.each do |indoor| %>
+    <div class="photo">
+      <%= link_to image_tag(indoor.image.url(:small)), indoor.image.url(:original) %>
+      <%= link_to '', {:controller => 'indoor_maps', :action => 'delete_map', :id => indoor.id}, :class => "delete_photo" %> 
+      <p>Piso <%= indoor.floor%></p>
+    </div>
+  <% end %>
+</div>

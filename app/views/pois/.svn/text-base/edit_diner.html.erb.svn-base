@@ -1,0 +1,5 @@
+<%= link_to '<--Volver', :back %>
+<br/><br /> 
+<h1>Editar Casino/Cafetería</h1>
+<hr />
+<%= render 'form_edit_diner' %>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/adapters
+END
+sqlite.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/adapters/sqlite.rb
+END
+abstract.rb
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/adapters/abstract.rb
+END
+postgresql.rb
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/adapters/postgresql.rb
+END
+mysql.rb
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/adapters/mysql.rb
+END
+sqlserver.rb
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/adapters/sqlserver.rb
+END
+mysql2.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/adapters/mysql2.rb
+END

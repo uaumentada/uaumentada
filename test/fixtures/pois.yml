@@ -1,0 +1,30 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  lat: 1.5
+  lng: 1.5
+  description: MyText
+
+two:
+  name: MyString
+  lat: 1.5
+  lng: 1.5
+  description: MyText
+
+# == Schema Information
+#
+# Table name: pois
+#
+#  id          :integer         not null, primary key
+#  name        :string(255)
+#  lat         :float
+#  lng         :float
+#  description :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#  poi_type_id :integer
+#  campus_id   :integer
+#  user_id     :integer
+#
+

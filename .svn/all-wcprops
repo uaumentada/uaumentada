@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/puc-aumentada/!svn/ver/391/trunk/pucaumentada
+END
+Rakefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/puc-aumentada/!svn/ver/2/trunk/pucaumentada/Rakefile
+END
+Capfile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/puc-aumentada/!svn/ver/44/trunk/pucaumentada/Capfile
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/puc-aumentada/!svn/ver/2/trunk/pucaumentada/.gitignore
+END
+Gemfile
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/puc-aumentada/!svn/ver/440/trunk/pucaumentada/Gemfile
+END
+config.ru
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/puc-aumentada/!svn/ver/2/trunk/pucaumentada/config.ru
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/puc-aumentada/!svn/ver/2/trunk/pucaumentada/README
+END
+Gemfile.lock
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/puc-aumentada/!svn/ver/443/trunk/pucaumentada/Gemfile.lock
+END

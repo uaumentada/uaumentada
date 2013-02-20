@@ -1,0 +1,23 @@
+<h1>Listados categorías puntos de interés</h1>
+
+<table>
+  <tr>
+  	<th><%= sortable "name", "Nombre" %></th>
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+<% @poi_types.each do |poi_type| %>
+   <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= poi_type.name %></td>
+    <td class="view"><%= link_to '', poi_type, :class => "linkable"  %></td>
+    <td class="edit"><%= link_to '', edit_poi_type_path(poi_type), :class => "linkable"  %></td>
+    <td class="delete"><%= link_to '', poi_type, :confirm => 'Estás seguro?', :method => :delete, :class => "linkable"  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo', new_poi_type_path %>

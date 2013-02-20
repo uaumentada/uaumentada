@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/puc-aumentada/!svn/ver/249/trunk/pucaumentada/app/views/courses
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/puc-aumentada/!svn/ver/68/trunk/pucaumentada/app/views/courses/show.html.erb
+END
+user_courses.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/496/trunk/pucaumentada/app/views/courses/user_courses.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/585/trunk/pucaumentada/app/views/courses/_form.html.erb
+END
+no_permission.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/584/trunk/pucaumentada/app/views/courses/no_permission.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/puc-aumentada/!svn/ver/68/trunk/pucaumentada/app/views/courses/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/248/trunk/pucaumentada/app/views/courses/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/puc-aumentada/!svn/ver/68/trunk/pucaumentada/app/views/courses/new.html.erb
+END
+assocs.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/app/views/courses/assocs.html.erb
+END

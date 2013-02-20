@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/puc-aumentada/!svn/ver/319/trunk/pucaumentada/app/views/contests
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/400/trunk/pucaumentada/app/views/contests/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/582/trunk/pucaumentada/app/views/contests/_form.html.erb
+END
+no_permission.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/puc-aumentada/!svn/ver/583/trunk/pucaumentada/app/views/contests/no_permission.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/483/trunk/pucaumentada/app/views/contests/edit.html.erb
+END
+show.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/223/trunk/pucaumentada/app/views/contests/show.json.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/562/trunk/pucaumentada/app/views/contests/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/puc-aumentada/!svn/ver/483/trunk/pucaumentada/app/views/contests/new.html.erb
+END
+index.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/226/trunk/pucaumentada/app/views/contests/index.json.erb
+END

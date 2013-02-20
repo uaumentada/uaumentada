@@ -1,0 +1,26 @@
+<p id="notice"><%= params[:notice] %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @user.name %> 
+</p>
+
+<p>
+  <b>Usuario<% if session[:special_user].nil? %>/Email:<%end%></b>
+  <%= @user.email %><%if !@user.university.nil?%><% if session[:special_user].nil? %>@<%=@user.university.email%><%end%> <%end%>
+</p>
+<% if !session[:admin].nil? || !session[:super_admin].nil? %>
+<b>Privilegios:</b><br/>
+<% @user.privileges.each do |priv|%>
+	- <%= priv.description%> <br />
+<%end%>
+<%end%>
+<br/>
+<%= button_to 'Editar Perfil', { :controller => "users", :action => "edit_profile", :id => @user.id }  %> 
+<% if !session[:admin].nil? || !session[:super_admin].nil? || !session[:special_user].nil? %>
+	<%= button_to 'Cambiar Constraseña', { :controller => "users", :action => "edit_password", :id => @user.id }  %>
+<%end%>
+<% if @user.professor.nil? && @user.university.email != 'uc.cl'%>
+<br/>
+<%= button_to 'Soy docente', :controller => 'professors', :action => 'petition'  %>
+<% end%>

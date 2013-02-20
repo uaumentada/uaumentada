@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/models
+END
+mock_organization.rb
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/models/mock_organization.rb
+END
+mock_address.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/models/mock_address.rb
+END
+mock_person.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/models/mock_person.rb
+END
+custom_location.rb
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/models/custom_location.rb
+END
+company.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/models/company.rb
+END
+location.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/models/location.rb
+END
+mock_family.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/models/mock_family.rb
+END
+mock_house.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/models/mock_house.rb
+END
+store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/models/store.rb
+END

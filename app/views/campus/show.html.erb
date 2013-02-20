@@ -1,0 +1,50 @@
+<%= javascript_include_tag "googlemaps.js" %>
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true" %>
+<script language="javascript">
+
+var map;
+var marker = null;
+
+function on_load()
+{
+
+  //centers the map at campus San Joaquin
+  map= new google.maps.Map(document.getElementById('map_canvas'), {
+  center: new google.maps.LatLng(<%= @campu.lat %>, <%= @campu.lng %>),
+  zoom: 17,
+  mapTypeId: google.maps.MapTypeId.HYBRID,
+  disableDefaultUI: false
+});
+
+
+marker = new google.maps.Marker({
+    position: new google.maps.LatLng(<%= @campu.lat.to_s %>, <%= @campu.lng.to_s %>),
+    map: map,
+    title: "Ubicación central del Campus"
+ });
+
+}
+</script>
+<body onload="on_load()">
+	<%= link_to '<-- Volver', {:controller => :campus, :action => :index, :university_id => @campu.university.id} %> 
+<p id="notice"><%= notice %></p>
+
+<div style=" width:50%; height:50%; float:left">
+	
+<p>
+  <b>  <%= @campu.name %> </b>
+  <br/>
+</p>
+</div>
+<!-- espacio del canvas del mapa -->
+<div style=" width:50%; height:50%; float:right">
+  <center><div id="map_canvas" style="width:330px; height:390px"></div></center>
+</div>
+
+<button><%= link_to 'Editar', edit_campu_path(@campu) %></button> 
+<button><%= link_to 'Eliminar', {:controller => :campus, :action => :destroy, :id => @campu.id}, :confirm => 'Estás seguro? esta acción es irreversible', :method => :delete %></button>
+<br/><br/>
+
+</body>
+
+

@@ -1,0 +1,5 @@
+<p><%= link_to '<--Volver', :back %></p>
+<h2>Nuevo Usuario</h2>
+<hr/>
+<%= render 'form' %>
+

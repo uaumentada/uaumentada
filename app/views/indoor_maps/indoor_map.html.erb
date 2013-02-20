@@ -1,0 +1,165 @@
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<%= javascript_include_tag "googlemaps.js" %>
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true" %>
+<script language="javascript">
+
+var map = null;
+var markerTr = null;
+var markerBl = null;
+var floorPlan = null;
+
+function on_load()
+{
+
+  //centers the map at campus San Joaquin
+  setMap(-33.498586, -70.613744);
+  setListener(map);
+
+}
+
+   function Refresh(boton) 
+   { 
+   	
+  
+   	
+ floorPlan = new google.maps.GroundOverlay(
+	document.getElementById('image_url').value,
+	new google.maps.LatLngBounds(
+		new google.maps.LatLng(document.getElementById('bottomleft_lat').value +"", document.getElementById('bottomleft_lng').value +""),
+		new google.maps.LatLng(document.getElementById('topright_lat').value +"", document.getElementById('topright_lng').value +"") 
+		)
+	);
+
+   	
+    floorPlan.setMap(map);
+      
+      resetMarkers();
+      setListener(map);
+      
+      return true; 
+   } 
+
+//Resets the map to the new campus selected
+function campus_change(sel)
+{
+
+resetMarkers();
+
+//Get the location of the selected campus
+var location = sel.options[sel.selectedIndex].value.split(",");
+
+
+  setMap(parseFloat(location[0]),parseFloat(location[1]) );
+  
+  setListener(map);
+
+}
+
+function resetMarkers()
+{
+	markerBl.setMap(null);
+markerBl = null;
+markerTr.setMap(null);
+markerTr = null;
+}
+
+function setMap(lat, lng)
+{
+	map= new google.maps.Map(document.getElementById('map_canvas'), {
+center: new google.maps.LatLng(lat, lng),
+zoom: 17,
+mapTypeId: google.maps.MapTypeId.HYBRID,
+disableDefaultUI: true
+});
+}
+
+function setListener (map)
+{
+	google.maps.event.addListener(map, 'click', function(event){
+	if(document.getElementById('topright').checked) 
+	{
+       document.getElementById('topright_lat').value = event.latLng.lat();
+       document.getElementById('topright_lng').value = event.latLng.lng();
+       
+    	if (markerTr == null)
+ 		{
+ 			var pinColor = "38A446";
+    		var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+        	new google.maps.Size(21, 34),
+        	new google.maps.Point(0,0),
+        	new google.maps.Point(10, 34));
+ 		
+  			markerTr = new google.maps.Marker({
+  			position: new google.maps.LatLng(event.latLng.lat(),   	event.latLng.lng()),
+  			map: map,
+  			icon: pinImage
+			});
+		}
+		else
+		{
+  			markerTr.setPosition( new google.maps.LatLng(event.latLng.lat(), event.latLng.lng()));
+		}
+       
+	}else if(document.getElementById('bottomleft').checked) {
+	
+  	   document.getElementById('bottomleft_lat').value = event.latLng.lat();
+	   document.getElementById('bottomleft_lng').value = event.latLng.lng();
+	   
+	   if (markerBl == null)
+		{
+ 		 	var pinColor = "FE7569";
+    		var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+        	new google.maps.Size(21, 34),
+        	new google.maps.Point(0,0),
+        	new google.maps.Point(10, 34));
+        	
+  			markerBl = new google.maps.Marker({
+  			position: new google.maps.LatLng(event.latLng.lat(),   	event.latLng.lng()),
+  			map: map,
+  			icon: pinImage
+			});
+		}
+		else
+		{
+  			markerBl.setPosition( new google.maps.LatLng(event.latLng.lat(), event.latLng.lng()));
+		}
+
+	}
+});
+}
+
+</script>
+<body onload="on_load()">
+<div style=" width:50%; height:50%; float:right">
+<center>
+<% @campus = Campus.new %>
+<% @campus.name = "-33.498586,-70.613744" %>
+Campus del evento: <%= select("campus", "name", Campus.all.collect {|r| [ r.name, r.lat + "," + r.lng ] },  {:prompt => 'Selecciona un Campus'}, {:onchange => 'campus_change(this)'}) %></center>
+
+<br/>
+</div>
+<div style=" width:50%; height:50%; float:left">
+<br/>
+<br/><br/>
+<input type="button" name="Refresh" value="Refrescar" OnClick="Refresh(this);">
+<br />
+
+Ingresar url de la imagen:<br />
+<input type="text" id="image_url"  name="image[url]"></input>
+<br /><br />Ubicación de la imagen: <br />
+<input type="radio" name="group1" id="topright" value="topright" checked> Esquina superior derecha (pin verde)<br>
+<input type="text" id="topright_lat"  name="image[topright_lat]" placeholder="Haz click en el mapa" DISABLED></input>
+<input type="text" id="topright_lng"  name="image[topright_lng]" placeholder="Haz click en el mapa" DISABLED></input>
+<br />
+<input type="radio" name="group1" id="bottomleft" value="bottomleft" > Esquina inferior izquierda (pin rojo)<br>
+<input type="text" id="bottomleft_lat"  name="image[bottomleft_lat]" placeholder="Haz click en el mapa" DISABLED></input>
+<input type="text" id="bottomleft_lng"  name="image[bottomleft_lng]" placeholder="Haz click en el mapa" DISABLED></input>
+
+</div>
+
+<!-- espacio del canvas del mapa -->
+<div style=" width:50%; height:50%; float:right">
+  <center><div id="map_canvas" style="width:330px; height:390px"></div></center>
+</div>
+
+</body>

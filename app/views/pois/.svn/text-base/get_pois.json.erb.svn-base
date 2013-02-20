@@ -1,0 +1,4 @@
+
+{"poi":[
+ <%= raw @pois.map{|item| '{"id":"' +"#{item.id}" +'","name":"' + "#{item.name}" +  '","description":"' + "#{item.description}" +  '","lat":"' + "#{item.lat}"+  '","lng":"' + "#{item.lng}"+  '"}' }.join(",") %>
+]}

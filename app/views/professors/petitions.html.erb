@@ -1,0 +1,43 @@
+<h1>Solicitudes de profesores</h1>
+
+<% if flash[:warning] or flash[:notice] %>
+  <div id="notice" <% if flash[:warning] %>class="warning"<% end %>>
+    <%= flash[:warning] || flash[:notice] %>
+  </div>
+  <script type="text/javascript">
+    setTimeout("new Effect.Fade('notice');", 15000)
+  </script>
+<% end %>
+
+<% if @professors.size > 0 %>
+<table>
+  <tr>
+    <th>Usuario</th>
+    <th>Oficina</th>
+    <th>Estado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @professors.each do |professor| %>
+  <tr>
+    <td><%= professor.user.name %></td>
+    <td><%= professor.poi %></td>
+    <% if professor.approved%>
+    	<td>Aprovado</td>
+   	<% else %>
+    	<td>Esperando</td>
+    <% end %>
+    <td><%= link_to 'Procesar', :controller => "professors", :action => "assign_poi", :prof_id => professor.id %></td>
+    <td><%= link_to 'Rechazar', professor, :confirm => 'Estas seguro que deseas rechazar?', :method => :delete %></td>
+  </tr>
+<% end %>
+<% else %>
+  <br>
+  No hay peticiones
+<% end %>
+</table>
+
+<br />

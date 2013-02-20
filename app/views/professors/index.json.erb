@@ -1,0 +1,3 @@
+{"professor":[
+ <%= raw @professors.map{|prof| '{"id":"' +"#{prof.id}" +'","name":"' + "#{prof.user.name}" +  '","status":"' +"#{prof.status}" +'","lat":"' +"#{prof.poi.lat}" +'","lng":"' +"#{prof.poi.lng}" +'","poi_title":"' +"#{prof.poi.name}" +'","username":"' + "#{prof.user.email}" +  '"}' }.join(",") %>
+]}

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/puc-aumentada/!svn/ver/382/trunk/pucaumentada/app/views/vertex
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/puc-aumentada/!svn/ver/576/trunk/pucaumentada/app/views/vertex/_form.html.erb
+END
+new_building.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/puc-aumentada/!svn/ver/437/trunk/pucaumentada/app/views/vertex/new_building.html.erb
+END
+show_polygon.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/puc-aumentada/!svn/ver/396/trunk/pucaumentada/app/views/vertex/show_polygon.html.erb
+END

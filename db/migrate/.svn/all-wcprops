@@ -1,0 +1,419 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/puc-aumentada/!svn/ver/379/trunk/pucaumentada/db/migrate
+END
+20120602043748_edit_university_and_users_columns.rb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/puc-aumentada/!svn/ver/290/trunk/pucaumentada/db/migrate/20120602043748_edit_university_and_users_columns.rb
+END
+20120602062154_change_image_type_from_univesities.rb
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/puc-aumentada/!svn/ver/290/trunk/pucaumentada/db/migrate/20120602062154_change_image_type_from_univesities.rb
+END
+20120514005302_add_user_id_to_privilege.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/puc-aumentada/!svn/ver/248/trunk/pucaumentada/db/migrate/20120514005302_add_user_id_to_privilege.rb
+END
+20110916232901_create_user_priviledges.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/puc-aumentada/!svn/ver/11/trunk/pucaumentada/db/migrate/20110916232901_create_user_priviledges.rb
+END
+20111103135921_create_answers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/56/trunk/pucaumentada/db/migrate/20111103135921_create_answers.rb
+END
+20121031171143_add_description_survey.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/puc-aumentada/!svn/ver/567/trunk/pucaumentada/db/migrate/20121031171143_add_description_survey.rb
+END
+20111110023730_create_survey_courses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/db/migrate/20111110023730_create_survey_courses.rb
+END
+20120507074945_change_diner_id_in_menu.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/puc-aumentada/!svn/ver/226/trunk/pucaumentada/db/migrate/20120507074945_change_diner_id_in_menu.rb
+END
+20120917185801_add_init_date_to_menu.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/puc-aumentada/!svn/ver/498/trunk/pucaumentada/db/migrate/20120917185801_add_init_date_to_menu.rb
+END
+20120514054734_create_vertices.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/puc-aumentada/!svn/ver/249/trunk/pucaumentada/db/migrate/20120514054734_create_vertices.rb
+END
+20120129165157_add_latand_long_to_campus.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/puc-aumentada/!svn/ver/119/trunk/pucaumentada/db/migrate/20120129165157_add_latand_long_to_campus.rb
+END
+20111104113129_add_group_to_answer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/58/trunk/pucaumentada/db/migrate/20111104113129_add_group_to_answer.rb
+END
+20120320195808_add_campus_to_poi.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/puc-aumentada/!svn/ver/149/trunk/pucaumentada/db/migrate/20120320195808_add_campus_to_poi.rb
+END
+20120601234456_add_university_id_to_campus.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/puc-aumentada/!svn/ver/290/trunk/pucaumentada/db/migrate/20120601234456_add_university_id_to_campus.rb
+END
+20120527215554_creat_ad_event_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/puc-aumentada/!svn/ver/282/trunk/pucaumentada/db/migrate/20120527215554_creat_ad_event_table.rb
+END
+20111110021159_create_privileges.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/db/migrate/20111110021159_create_privileges.rb
+END
+20120320050000_add_poi_type_to_poi.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/puc-aumentada/!svn/ver/147/trunk/pucaumentada/db/migrate/20120320050000_add_poi_type_to_poi.rb
+END
+20111110022623_create_courses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/db/migrate/20111110022623_create_courses.rb
+END
+20120514010842_remove_id_from_user_privilege.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/puc-aumentada/!svn/ver/260/trunk/pucaumentada/db/migrate/20120514010842_remove_id_from_user_privilege.rb
+END
+20120609211832_add_icon_to_category_and_poi_type.rb
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/puc-aumentada/!svn/ver/297/trunk/pucaumentada/db/migrate/20120609211832_add_icon_to_category_and_poi_type.rb
+END
+20111110004627_rename_privilge.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/db/migrate/20111110004627_rename_privilge.rb
+END
+20120128202919_add_title_to_event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/119/trunk/pucaumentada/db/migrate/20120128202919_add_title_to_event.rb
+END
+20120514054711_create_buildings.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/249/trunk/pucaumentada/db/migrate/20120514054711_create_buildings.rb
+END
+20120616173419_edit_answers_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/db/migrate/20120616173419_edit_answers_table.rb
+END
+20110917030634_add_email_uniqueness_index.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/puc-aumentada/!svn/ver/379/trunk/pucaumentada/db/migrate/20110917030634_add_email_uniqueness_index.rb
+END
+20110916235424_create_surveys.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/11/trunk/pucaumentada/db/migrate/20110916235424_create_surveys.rb
+END
+20120601234325_create_universities.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/puc-aumentada/!svn/ver/290/trunk/pucaumentada/db/migrate/20120601234325_create_universities.rb
+END
+20120129162008_create_campus.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/119/trunk/pucaumentada/db/migrate/20120129162008_create_campus.rb
+END
+20120128211828_create_categories.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/puc-aumentada/!svn/ver/119/trunk/pucaumentada/db/migrate/20120128211828_create_categories.rb
+END
+20120503050130_create_push_messages.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/puc-aumentada/!svn/ver/206/trunk/pucaumentada/db/migrate/20120503050130_create_push_messages.rb
+END
+20120503051451_add_sent_to_push_message.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/puc-aumentada/!svn/ver/206/trunk/pucaumentada/db/migrate/20120503051451_add_sent_to_push_message.rb
+END
+20111110154755_add_column_survey.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/67/trunk/pucaumentada/db/migrate/20111110154755_add_column_survey.rb
+END
+20120421001719_create_professors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/puc-aumentada/!svn/ver/189/trunk/pucaumentada/db/migrate/20120421001719_create_professors.rb
+END
+20120422043400_add_poi_id_to_professors.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/puc-aumentada/!svn/ver/189/trunk/pucaumentada/db/migrate/20120422043400_add_poi_id_to_professors.rb
+END
+20110916235258_create_questions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/puc-aumentada/!svn/ver/11/trunk/pucaumentada/db/migrate/20110916235258_create_questions.rb
+END
+20120412001927_add_campus_id_to_market_item.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/puc-aumentada/!svn/ver/174/trunk/pucaumentada/db/migrate/20120412001927_add_campus_id_to_market_item.rb
+END
+20120610212124_add_lat_lng_to_survey.rb
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/puc-aumentada/!svn/ver/302/trunk/pucaumentada/db/migrate/20120610212124_add_lat_lng_to_survey.rb
+END
+20120527215536_create_ads_points.rb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/puc-aumentada/!svn/ver/282/trunk/pucaumentada/db/migrate/20120527215536_create_ads_points.rb
+END
+20120128181347_create_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/119/trunk/pucaumentada/db/migrate/20120128181347_create_events.rb
+END
+20120523234807_add_image_to_event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/266/trunk/pucaumentada/db/migrate/20120523234807_add_image_to_event.rb
+END
+20120514054647_create_indoor_maps.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/249/trunk/pucaumentada/db/migrate/20120514054647_create_indoor_maps.rb
+END
+20120917190238_add_days_of_the_week_to_menu.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/puc-aumentada/!svn/ver/498/trunk/pucaumentada/db/migrate/20120917190238_add_days_of_the_week_to_menu.rb
+END
+20120612221122_new_question_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/318/trunk/pucaumentada/db/migrate/20120612221122_new_question_table.rb
+END
+20120503214640_change_phone_id_to_string.rb
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/puc-aumentada/!svn/ver/212/trunk/pucaumentada/db/migrate/20120503214640_change_phone_id_to_string.rb
+END
+20120507061852_create_menus.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/puc-aumentada/!svn/ver/226/trunk/pucaumentada/db/migrate/20120507061852_create_menus.rb
+END
+20120506005442_create_contests.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/puc-aumentada/!svn/ver/222/trunk/pucaumentada/db/migrate/20120506005442_create_contests.rb
+END
+20120913225240_add_active_to_token.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/puc-aumentada/!svn/ver/483/trunk/pucaumentada/db/migrate/20120913225240_add_active_to_token.rb
+END
+20111110023531_create_user_courses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/db/migrate/20111110023531_create_user_courses.rb
+END
+20120602064323_rename_mail_f_rom_university.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/puc-aumentada/!svn/ver/290/trunk/pucaumentada/db/migrate/20120602064323_rename_mail_f_rom_university.rb
+END
+20110916232228_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/11/trunk/pucaumentada/db/migrate/20110916232228_create_users.rb
+END
+20120131043940_add_dates_to_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/db/migrate/20120131043940_add_dates_to_events.rb
+END
+20120202234758_change_column_events.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/db/migrate/20120202234758_change_column_events.rb
+END
+20120411233320_create_market_items.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/puc-aumentada/!svn/ver/174/trunk/pucaumentada/db/migrate/20120411233320_create_market_items.rb
+END
+20111110021603_edit_columns_user_privileges.rb
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/db/migrate/20111110021603_edit_columns_user_privileges.rb
+END
+20120320193715_change_poi_type.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/puc-aumentada/!svn/ver/149/trunk/pucaumentada/db/migrate/20120320193715_change_poi_type.rb
+END
+20120429043637_create_tokens.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/196/trunk/pucaumentada/db/migrate/20120429043637_create_tokens.rb
+END
+20120527220007_creat_ad_contest_table.rb
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/puc-aumentada/!svn/ver/282/trunk/pucaumentada/db/migrate/20120527220007_creat_ad_contest_table.rb
+END
+20111102004101_fix_question_column_name.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/puc-aumentada/!svn/ver/55/trunk/pucaumentada/db/migrate/20111102004101_fix_question_column_name.rb
+END
+20121027003032_change_lat_lng_type_vertex.rb
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/puc-aumentada/!svn/ver/558/trunk/pucaumentada/db/migrate/20121027003032_change_lat_lng_type_vertex.rb
+END
+20120617184216_add_code_to_survey.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/338/trunk/pucaumentada/db/migrate/20120617184216_add_code_to_survey.rb
+END
+20111110154141_drop_survey_courses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/65/trunk/pucaumentada/db/migrate/20111110154141_drop_survey_courses.rb
+END
+20121108191623_add_university_to_survey.rb
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/puc-aumentada/!svn/ver/589/trunk/pucaumentada/db/migrate/20121108191623_add_university_to_survey.rb
+END
+20120422034417_add_default_value_to_status_attribute.rb
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/puc-aumentada/!svn/ver/189/trunk/pucaumentada/db/migrate/20120422034417_add_default_value_to_status_attribute.rb
+END
+20120320050103_create_poi_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/147/trunk/pucaumentada/db/migrate/20120320050103_create_poi_types.rb
+END
+20120506013413_change_image_contest.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/puc-aumentada/!svn/ver/222/trunk/pucaumentada/db/migrate/20120506013413_change_image_contest.rb
+END
+20120812045738_remove_email_uniqueness_index.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/puc-aumentada/!svn/ver/379/trunk/pucaumentada/db/migrate/20120812045738_remove_email_uniqueness_index.rb
+END
+20120602060900_add_image_to_university.rb
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/puc-aumentada/!svn/ver/293/trunk/pucaumentada/db/migrate/20120602060900_add_image_to_university.rb
+END
+20120320044046_create_pois.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/147/trunk/pucaumentada/db/migrate/20120320044046_create_pois.rb
+END
+20120506213041_add_user_id_to_pois.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/puc-aumentada/!svn/ver/226/trunk/pucaumentada/db/migrate/20120506213041_add_user_id_to_pois.rb
+END

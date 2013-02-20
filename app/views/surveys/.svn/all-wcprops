@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/puc-aumentada/!svn/ver/390/trunk/pucaumentada/app/views/surveys
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/581/trunk/pucaumentada/app/views/surveys/_form.html.erb
+END
+no_permission.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/583/trunk/pucaumentada/app/views/surveys/no_permission.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/puc-aumentada/!svn/ver/581/trunk/pucaumentada/app/views/surveys/edit.html.erb
+END
+get_public_surveys.xml.builder
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/53/trunk/pucaumentada/app/views/surveys/get_public_surveys.xml.builder
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/565/trunk/pucaumentada/app/views/surveys/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/puc-aumentada/!svn/ver/566/trunk/pucaumentada/app/views/surveys/new.html.erb
+END
+get_geolocalized.xml.builder
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/puc-aumentada/!svn/ver/302/trunk/pucaumentada/app/views/surveys/get_geolocalized.xml.builder
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/puc-aumentada/!svn/ver/56/trunk/pucaumentada/app/views/surveys/show.html.erb
+END

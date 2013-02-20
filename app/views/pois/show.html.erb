@@ -1,0 +1,87 @@
+<%= javascript_include_tag "googlemaps.js" %>
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true" %>
+<script language="javascript">
+
+var map;
+var marker = null;
+
+function on_load()
+{
+
+  map= new google.maps.Map(document.getElementById('map_canvas'), {
+  center: new google.maps.LatLng(<%= @poi.lat %>, <%= @poi.lng %>),
+  zoom: 17,
+  mapTypeId: google.maps.MapTypeId.HYBRID,
+  disableDefaultUI: true
+	});
+
+
+	marker = new google.maps.Marker({
+    position: new google.maps.LatLng(<%= @poi.lat.to_s %>, <%= @poi.lng.to_s %>),
+    map: map,
+    title: "<%=@poi.name.to_s %>"
+ 	});
+
+}
+</script>
+<body onload="on_load()">
+	<!--
+	<%if !@poi.building.nil?%>
+		<%= link_to '<-- Volver', :my_buildings%>
+	<%else%> 
+	-->
+		<%= link_to '<-- Volver', :pois%>
+	<!-- <%end%> --> 
+<p id="notice"><%= notice %></p>
+
+<div style=" width:50%; height:50%; float:left">
+
+<p>
+  <h1><%= @poi.name %></h1>
+  <font color="#747170">Creado por: <%= @poi.user.name%>, <%= @poi.user.email%><%if !@poi.user.university.nil? %>@<%=@poi.user.university.email %><%end%></font> 
+</p>
+  	
+	<b>Categoría</b>: <%= @poi.poi_type.name %>
+	<% if @poi.poi_type.name == "Edificios"%>
+	<br />
+	<b>Número de pisos: </b> <% if @poi.building.floors <= 0%> Sin especificar <%else %><%= @poi.building.floors%><%end%>
+<center>
+   
+   
+   <br />
+    <td><button><%= link_to 'Interior', :controller => "indoor_maps", :action => "new", :poi_id => @poi.id %></button></td>
+    <td><button><%= link_to 'Polígono', :controller => "vertex", :action => "show", :poi_id => @poi.id %></button></td>
+<br />
+</center><%end%>
+
+	
+		<br /><b>Campus</b>: <%= @poi.campus.name %>
+	
+<p>
+	<br />
+  <b>Descripción:</b>
+  <div class="box">
+  	<%if @poi.description != ""%>
+  		<%= @poi.description %>
+  	<% else %>
+  		<i>Sin descripción</i>
+  	<% end %>
+  </div>
+</p>
+</div>
+<!-- espacio del canvas del mapa -->
+<div style=" width:50%; height:50%; float:right">
+  <center><div id="map_canvas" style="width:330px; height:390px"></div></center>
+</div>
+ <% if @poi.poi_type.name != "Edificios"%>
+	<button><%= link_to 'Editar', edit_poi_path(@poi) %> </button>
+ <%else%>
+	<button><%= link_to 'Editar', :controller => :pois, :action => :edit_building, :id => @poi%> </button>
+<%end%> 
+	
+<br/><br/>
+
+</body>
+
+
+

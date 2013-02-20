@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: questions
+#
+#  id              :integer         not null, primary key
+#  question_type   :integer
+#  question        :string(255)
+#  mandatory       :boolean
+#  help            :string(255)
+#  answers         :string(255)
+#  question_number :integer
+#  survey_id       :string(255)
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  question_type: 1
+  question: MyString
+  mandatory: false
+  help: MyString
+  answers: MyString
+  question_number: 1
+  survey_id: MyString
+
+two:
+  question_type: 1
+  question: MyString
+  mandatory: false
+  help: MyString
+  answers: MyString
+  question_number: 1
+  survey_id: MyString

@@ -1,0 +1,51 @@
+<h1>Listado de mis cafeterias <button><%= link_to 'Crear nuevo Punto', :new_diner %></button></h1>
+<hr />
+<%= form_tag({:controller => "pois", :action => "my_diners_clean"}, :method => :get) do %>
+  
+    <%= text_field_tag "searchbox", params[:searchbox] %>
+    <%= submit_tag "Buscar", :name => nil %>
+  
+<% end %>
+<% if @pois.size == 0 %>
+<br/>
+No hay casinos/cafeterías para mostrar
+<br />
+<% else %>
+<br/>
+<table>
+  <tr>
+    <th><%= sortable "name", "Nombre" %></th>
+    <th><%= sortable "campus_id", "Campus" %></th>
+    <th>Ver local</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pois.each do |poi| %>
+  <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= poi.name %></td>
+    <td><%= poi.campus.name %></td>
+    <td class="viewpin" align="center"><%= link_to '', poi, :class => "linkable"  %></td>
+    <% if poi.user_id == session[:user]%>
+    <td class="edit" align="center"><%= link_to '', {:controller => :pois, :action => :edit_diner, :id => poi.id}, :class => "linkable"  %></td>
+    <% else %>
+    <td></td>
+    <% end %>
+    <% if poi.user_id == session[:user]%>
+    <td class="delete" align="center"><%= link_to '', { :controller => "pois", :action => "destroy_poi", :id => poi.id, :from => "my_diners"},  :class => "linkable"  %></td>
+    <% else %>
+    <td></td>
+    <% end %>
+    <td><%= link_to 'Ver Menu', :controller => "menus", :action => "index", :poi_id => poi.id %></td>
+    <td><button><%= link_to 'Crear Menu', :controller => "menus", :action => "new", :poi_id => poi.id %></button></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br />
+<center><%= paginate @pois %></center>
+

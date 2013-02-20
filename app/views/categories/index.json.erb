@@ -1,0 +1,4 @@
+
+{"category":[
+ <%= raw @categories.map{|item| '{"id":"' +"#{item.id}" +'","name":"' + "#{item.name}" +  '","icon_high":"' + "#{item.icon.url(:high)}"+  '","icon_medium":"' + "#{item.icon.url(:medium)}"+  '","icon_low":"' + "#{item.icon.url(:low)}" +  '"}' }.join(",") %>
+]}

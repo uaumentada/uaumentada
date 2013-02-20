@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/puc-aumentada/!svn/ver/390/trunk/pucaumentada/app/views/pois
+END
+new_building.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/249/trunk/pucaumentada/app/views/pois/new_building.html.erb
+END
+edit_diner.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/465/trunk/pucaumentada/app/views/pois/edit_diner.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/puc-aumentada/!svn/ver/561/trunk/pucaumentada/app/views/pois/index.html.erb
+END
+all_buildings.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/575/trunk/pucaumentada/app/views/pois/all_buildings.html.erb
+END
+new_diner.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/581/trunk/pucaumentada/app/views/pois/new_diner.html.erb
+END
+get_pois.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/612/trunk/pucaumentada/app/views/pois/get_pois.json.erb
+END
+get_common_names.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/298/trunk/pucaumentada/app/views/pois/get_common_names.json.erb
+END
+_form_building.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/puc-aumentada/!svn/ver/576/trunk/pucaumentada/app/views/pois/_form_building.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/puc-aumentada/!svn/ver/595/trunk/pucaumentada/app/views/pois/show.html.erb
+END
+get_polygons.xml.builder
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/568/trunk/pucaumentada/app/views/pois/get_polygons.xml.builder
+END
+get_common_names.xml.builder
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/puc-aumentada/!svn/ver/165/trunk/pucaumentada/app/views/pois/get_common_names.xml.builder
+END
+no_permission.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/593/trunk/pucaumentada/app/views/pois/no_permission.html.erb
+END
+_form_edit_building.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/puc-aumentada/!svn/ver/576/trunk/pucaumentada/app/views/pois/_form_edit_building.html.erb
+END
+get_buildings.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/249/trunk/pucaumentada/app/views/pois/get_buildings.json.erb
+END
+my_buildings.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/575/trunk/pucaumentada/app/views/pois/my_buildings.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/puc-aumentada/!svn/ver/394/trunk/pucaumentada/app/views/pois/edit.html.erb
+END
+get_diners.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/239/trunk/pucaumentada/app/views/pois/get_diners.json.erb
+END
+_form_edit_diner.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/554/trunk/pucaumentada/app/views/pois/_form_edit_diner.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/puc-aumentada/!svn/ver/595/trunk/pucaumentada/app/views/pois/new.html.erb
+END
+get_poi.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/puc-aumentada/!svn/ver/234/trunk/pucaumentada/app/views/pois/get_poi.json.erb
+END
+my_diners_clean.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/561/trunk/pucaumentada/app/views/pois/my_diners_clean.html.erb
+END
+edit_building.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/394/trunk/pucaumentada/app/views/pois/edit_building.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/puc-aumentada/!svn/ver/595/trunk/pucaumentada/app/views/pois/_form.html.erb
+END

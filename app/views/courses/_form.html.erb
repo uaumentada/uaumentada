@@ -1,0 +1,19 @@
+<p id="notice"><%= flash[:notice]%></p>
+
+<%= form_for(@course) do |f| %>
+  <div class="field">
+    <%= f.label 'Sigla' %>-Sección (ej. IIC1103-2)<br />
+    <%= f.text_field :initials %>
+  </div>
+  <div class="field">
+    <%= f.label 'Titulo' %><br />
+    <%= f.text_field :title %>
+  </div>
+   <!-- <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div> -->
+  <div class="actions">
+    <%= f.submit 'Aceptar' %>
+  </div>
+<% end %>

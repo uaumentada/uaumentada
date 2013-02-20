@@ -1,0 +1,18 @@
+
+<% if searchresults.length == 0 %>
+
+	<p>Sorry! No articles found...</p>
+
+<% elsif params[:query] == "" %>
+    
+    <p>You must enter a search term.</p>
+
+<% else %>
+	
+	<ul>
+	<% for user in searchresults %>	   
+	    <li><%= link_to user.title , user_url(:id => user.id) %></li>
+	<% end %>
+	</ul>
+
+<% end %>

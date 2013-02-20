@@ -1,0 +1,27 @@
+  <p align="left"><%= link_to '<--Volver', :controller => "contests", :action => "my_contests" %></p>
+
+<p id="notice"><%= notice %></p>
+<p>
+	
+	
+  <h1><%= @contest.title %></h1><hr />
+  <pre>	<b>Organiza:</b> 	<%= @contest.organizer %>
+  	<b>Inicia:</b> 	<%= @contest.init_date.strftime("%d/%m/%Y - %H:%M") %> <br/>	<b>Finaliza:</b>  	<%= @contest.end_date.strftime("%d/%m/%Y - %H:%M") %></pre>
+</p>
+
+<p>
+  <%= @contest.description %>
+</p>
+
+
+
+<p align="center">
+	
+	<% if @contest.image? %>
+      <%= image_tag @contest.image.url(:medium) %>
+      <%= button_to "Publicidad", :controller => 'ads_points', :action => "index_ads_contests", :contest_id => @contest.id%>
+    <% end %>
+</p>
+
+<button>  <%= link_to 'Editar', edit_contest_path(@contest) %> </button>
+

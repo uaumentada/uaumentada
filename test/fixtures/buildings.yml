@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  floors: 1
+  poi_id: 1
+
+two:
+  floors: 1
+  poi_id: 1
+
+# == Schema Information
+#
+# Table name: buildings
+#
+#  id         :integer         not null, primary key
+#  floors     :integer
+#  poi_id     :integer
+#  created_at :datetime
+#  updated_at :datetime
+#
+

@@ -1,0 +1,3 @@
+{"poi":[
+ <%= raw '{"id":"' +"#{@poi.id}" +'","title":"' + "#{@poi.title}" +  '","description":"' + "#{@poi.description}" +'","lat":"' + "#{@poi.lat}" +  '","lng":"' + "#{@poi.lng}"+  '"}' }.join(",") %>
+]}

@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  status: false
+
+two:
+  user_id: 1
+  status: false
+
+# == Schema Information
+#
+# Table name: professors
+#
+#  id         :integer         not null, primary key
+#  user_id    :integer
+#  status     :boolean         default(FALSE)
+#  created_at :datetime
+#  updated_at :datetime
+#  poi_id     :integer
+#  approved   :boolean         default(FALSE)
+#
+

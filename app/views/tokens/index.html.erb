@@ -1,0 +1,29 @@
+<h1>Listing tokens</h1>
+
+<table>
+  <tr>
+    <th>Phone</th>
+    <th>Platform</th>
+    <th>Last lat</th>
+    <th>Last lng</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tokens.each do |token| %>
+  <tr>
+    <td><%= token.phone_id %></td>
+    <td><%= token.platform %></td>
+    <td><%= token.last_lat %></td>
+    <td><%= token.last_lng %></td>
+    <td><%= link_to 'Show', token %></td>
+    <td><%= link_to 'Edit', edit_token_path(token) %></td>
+    <td><%= link_to 'Destroy', token, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Token', new_token_path %>

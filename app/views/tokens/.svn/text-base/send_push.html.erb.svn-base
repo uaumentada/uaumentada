@@ -1,0 +1,3 @@
+<p id="notice"><%= @notice %></p>
+
+<button><a href="<%= url_for :controller => :push_messages, :action => :new %>">Enviar notificación</a></button>

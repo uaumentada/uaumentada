@@ -1,0 +1,3 @@
+{"menus":[
+ <%= raw @menus.map{|item| '{"id":"' +"#{item.id}" +'","title":"' + "#{item.title}" +  '","description":"' + "#{item.description}"+  '","price":"' + "#{item.price}"+  '","image":"' + "#{item.image.url}" +  '"}' }.join(",") %>
+]}

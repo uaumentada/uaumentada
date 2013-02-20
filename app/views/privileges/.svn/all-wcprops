@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/puc-aumentada/!svn/ver/379/trunk/pucaumentada/app/views/privileges
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/app/views/privileges/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/app/views/privileges/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/app/views/privileges/_form.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/app/views/privileges/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/app/views/privileges/index.html.erb
+END
+user_privileges.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/473/trunk/pucaumentada/app/views/privileges/user_privileges.html.erb
+END

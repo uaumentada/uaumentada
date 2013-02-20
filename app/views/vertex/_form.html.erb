@@ -1,0 +1,172 @@
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<%= javascript_include_tag "googlemaps.js" %>
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true" %>
+<script language="javascript">
+
+var map;
+var marker = null;
+var num = 0;
+var shape;
+
+function on_load()
+{
+	var lat = 0;
+	var lng = 0;
+	
+	<% if !@building.id.nil? %>
+	 lat = <%= @building.poi.lat %>;
+  	 lng = <%= @building.poi.lng %>;
+  	 <%end%>	
+	
+  var mapDiv = document.getElementById('map_canvas');
+  var map = new google.maps.Map(mapDiv, {
+    center: new google.maps.LatLng(lat, lng),
+    zoom: 17,
+    mapTypeId: google.maps.MapTypeId.HYBRID,
+    disableDefaultUI: false
+  });
+
+	var	marker = new google.maps.Marker({
+      		position: new google.maps.LatLng(<%= @building.poi.lat %>, <%= @building.poi.lng %>),
+      		map: map,
+      		title:"Centro del edificio"
+  		});
+
+  shape = new google.maps.Polyline({
+    strokeColor: '#ff0000',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
+  shape.setMap(map);
+
+  google.maps.event.addListener(map, 'click', addPoint);
+}
+
+function addPoint(e) {
+  var vertices = shape.getPath();
+
+  vertices.push(e.latLng);
+  add(e.latLng)
+}
+
+
+
+function add(latlng)
+{
+	var div = document.getElementById('vertices');
+	var str = latlng.toString();
+	var clean = str.substring(1,str.length -1)
+	var loc = clean.split(",");
+	
+	lat = loc[0];
+	lng = loc[1];	
+	
+	var newdiv = document.createElement('div');
+	newdiv.setAttribute('id','point_'+num);
+    newdiv.innerHTML = '<input type="text" style="background-color: #D8DBCD;" id="lat['+num+']"  name="lat['+num+']" value="'+lat+'"></input><input type="text" style="background-color: #D8DBCD;" id="lng['+num+']" name="lng['+num+']" value="'+lng+'" ></input>';
+    div.appendChild(newdiv);
+    num = num + 1;
+		
+}
+
+function removep(num)
+{
+	var d = document.getElementById('vertices');
+	var remove = document.getElementById('point_'+num);
+  	d.removeChild(remove);
+  	
+  		var	marker = new google.maps.Marker({
+      		position: new google.maps.LatLng(<%= @building.poi.lat %>, <%= @building.poi.lng %>),
+      		map: map,
+      		title:"Centro del edificio"
+  		});
+  	
+}
+
+function clearpoints()
+{
+	var agree=confirm("Estas seguro de que quieres borrar todos los puntos? Esta acción es irreversible");
+	if (agree)
+	{
+		var d = document.getElementById('vertices');
+		for(i = 0; i < num; i++)
+		{
+			var remove = document.getElementById('point_'+i);
+  			//d.removeChild(remove);
+  			removep(i);
+		}
+	
+		clearmap();
+		num = 0;
+	}
+	
+}
+
+function clearmap()
+{
+ 
+ var mapDiv = document.getElementById('map_canvas');
+  var map = new google.maps.Map(mapDiv, {
+    center: new google.maps.LatLng(<%= @building.poi.lat %>, <%= @building.poi.lng %>),
+    zoom: 17,
+    mapTypeId: google.maps.MapTypeId.HYBRID,
+    disableDefaultUI: false
+  });
+
+  shape = new google.maps.Polyline({
+    strokeColor: '#ff0000',
+    strokeOpacity: 1.0,
+    strokeWeight: 2
+  });
+
+		var	marker = new google.maps.Marker({
+      		position: new google.maps.LatLng(<%= @building.poi.lat %>, <%= @building.poi.lng %>),
+      		map: map,
+      		title:"Centro del edificio"
+  		});
+
+  shape.setMap(map);
+
+  google.maps.event.addListener(map, 'click', addPoint);
+}
+
+function showmsg()
+{
+	alert("No puede editar estos campos. Si hay un error debe volver a empezar");
+}
+
+</script>
+<body onload="on_load()">
+
+<% if !@notice.nil?%>
+<br />
+	<font color="green"><%= @notice%></font>
+<% end%>
+
+<%= form_for :vertices, :url => {:action => 'create_polygon'} do -%>
+  
+<div style=" width:30%; height:50%; float:right">
+<center>
+<br/>
+</div>
+<div style=" width:70%; height:50%; float:left">
+<br/>
+<!--
+<button type=button id="btn_clear" onclick="add(',')">Nuevo punto</button>
+-->
+<button type=button id="btn_clear" onclick="clearpoints()">Borrar Todos</button>
+<div id="vertices"></div>
+</div>
+<!-- Map canvas -->
+<div style=" width:30%; height:50%; float:right">
+  <center><div id="map_canvas" style="width:330px; height:390px"></div></center>
+</div>
+
+<input id="building_id" name="building_id" value="<%= @building.id %>" HIDDEN/>
+
+  <div class="actions">
+    <%= submit_tag 'Crear polígono' %><%= link_to 'Cancelar', :back%>
+  </div>
+<% end %>
+</body>

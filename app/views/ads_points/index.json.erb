@@ -1,0 +1,3 @@
+{"ads_points":[
+ <%= raw @ads_points.map{|item| '{"id":"' +"#{item.id}" +'","title":"' + "#{item.title}" +  '","lat":"' + "#{item.lat}"+  '","lng":"' + "#{item.lng}" +  '"}' }.join(",") %>
+]}

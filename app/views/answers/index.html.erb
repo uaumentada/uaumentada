@@ -1,0 +1,73 @@
+<h1>Respuestas para "<%= @survey.title %>"</h1>
+<br/>
+Esta encuesta ha sido contestada <%= @numAnswers %> veces <tb/>  <INPUT TYPE="button" VALUE="Refrescar" onClick="history.go(0)">
+<br/>
+<% count = 1 %>
+<% @questions.each do |question| %>
+<h1><%= count  %>. <%= question.question %></h1>
+
+<table >
+  <tr>
+    <!-- <th>Id user</th> -->
+    <!-- <th>Id survey</th> -->
+    <!-- <th>Id question</th> -->
+    <th></th>
+    <!-- <th></th>
+    <th></th>
+    <th></th> -->
+  </tr>
+
+<% @answers = Answer.find(:all, :conditions => {:survey_id => @survey.id, :question_id => question.id }) %>
+<% if @answers && question.question_type == 0%> <!-- text -->
+<% @answers.each do |answer| %> 
+
+  <tr>
+    <td>- <%= answer.answer %></td>
+  </tr>
+<% end %>
+<%else %>
+    <% mult_answers = question.answers.split(';') %>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Task');
+        data.addColumn('number', 'Hours per Day');
+        data.addRows(<%= mult_answers.count %>);
+	 <% for i in 0..(mult_answers.count - 1)%>   
+
+        data.setValue(<%= i %>, 0, '<%= mult_answers[i].to_s %>');
+        data.setValue(<%= i %>, 1, <%= Answer.find(:all, :conditions => {:question_id => question.id, :answer => mult_answers[i] }).count %>);
+	<% end %>
+
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div<%= count  %>'));
+        chart.draw(data, {width: 450, height: 300, title: '<%= question.question %>'});
+      }
+    </script>
+
+    <div id="chart_div<%= count  %>"></div>
+
+<table>
+<tr>
+    <th>Respuesta</th>
+	<th>Cantidad</th>
+</tr>
+    <% for i in 0..(mult_answers.count - 1)%>   
+<tr>
+	<td><%= mult_answers[i] %></td>
+    <td align="center"><%= Answer.find(:all, :conditions => {:question_id => question.id, :answer => mult_answers[i] }).count %></td>
+</tr>
+    <% end %>
+</table>
+<% end %>
+</table>
+<% count = count + 1 %>
+<br/>
+<% end %>
+
+<!--
+<%= link_to 'New Answer', new_answer_path %> -->
+
+

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @poi_type.name %></h1><br/> 
+<p align="center">
+	
+	<% if @poi_type.icon? %>
+      <%= image_tag @poi_type.icon.url(:high) %>
+    <% else%>
+      No hay ícono asignado
+    <% end %>
+</p>
+
+
+<%= link_to 'Editar', edit_poi_type_path(@poi_type) %> |
+<%= link_to 'Volver', poi_types_path %>

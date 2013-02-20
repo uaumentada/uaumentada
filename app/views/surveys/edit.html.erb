@@ -1,0 +1,13 @@
+<%= link_to '<--Volver', :user_surveys %>
+<br />
+<br/>
+
+<h2>Editar Encuesta</h2>
+<hr>
+<center><%= link_to 'Ver preguntas', :controller => :questions, :action => :survey_questions, :survey_id => @survey.id %>
+<br /></center>
+<%= render 'form' %>
+
+<!-- <%= link_to 'Ver', @survey, :confirm => 'Seguro? Los cambios no han sido guardados' %> | 
+<%= button_to 'Cancelar', surveys_path, :confirm => 'Seguro? Los cambios no han sido guardados' %> -->
+

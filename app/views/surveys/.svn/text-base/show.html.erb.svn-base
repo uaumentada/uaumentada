@@ -1,0 +1,20 @@
+<p>
+  <b>Titulo:</b>
+  <%= @survey.title %>
+</p>
+
+<p>
+  <b>Nivel de privacidad:</b>
+  <%= @survey.privacy_level %>
+</p>
+<!--
+<p>
+  <b>Usuario:</b>
+  <%= @survey.user_id %>
+</p>
+-->
+
+<%= link_to 'Editar', edit_survey_path(@survey) %> 
+<!--|
+<%= link_to 'Volver', surveys_path %> -->
+

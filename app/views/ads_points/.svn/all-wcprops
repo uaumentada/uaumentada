@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/puc-aumentada/!svn/ver/287/trunk/pucaumentada/app/views/ads_points
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/393/trunk/pucaumentada/app/views/ads_points/edit.html.erb
+END
+show.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/287/trunk/pucaumentada/app/views/ads_points/show.json.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/491/trunk/pucaumentada/app/views/ads_points/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/393/trunk/pucaumentada/app/views/ads_points/new.html.erb
+END
+index.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/286/trunk/pucaumentada/app/views/ads_points/index.json.erb
+END
+index_ads_contests.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/puc-aumentada/!svn/ver/283/trunk/pucaumentada/app/views/ads_points/index_ads_contests.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/527/trunk/pucaumentada/app/views/ads_points/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/577/trunk/pucaumentada/app/views/ads_points/_form.html.erb
+END
+index_ads_events.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/puc-aumentada/!svn/ver/285/trunk/pucaumentada/app/views/ads_points/index_ads_events.html.erb
+END

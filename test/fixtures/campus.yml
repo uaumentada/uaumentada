@@ -1,0 +1,20 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+
+two:
+  name: MyString
+
+# == Schema Information
+#
+# Table name: campus
+#
+#  id         :integer         not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  lat        :string(255)
+#  lng        :string(255)
+#
+

@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<%= link_to '<-- Volver', :controller => "menus", :action => "index", :poi_id => @menu.poi_id %>
+<p>
+  <h1><%= @menu.title %></h1>
+  
+</p>
+
+<p>
+  <b>Descripción:</b>
+  <%= @menu.description %>
+</p>
+
+<p>
+  <b>Fecha Venta:</b>
+  <%= (@menu.init_date.to_s)[0..-14] %> al <%= (@menu.date.to_s)[0..-14] %>
+  <br />
+  <b>Días disponibles: </b><br />
+  <% if @menu.monday%> - Lunes <br /> <%end%>
+  <% if @menu.tuesday%> - Martes <br /> <%end%>
+  <% if @menu.wednesday%> - Miércoles <br /> <%end%>
+  <% if @menu.thursday%> - Jueves <br /> <%end%>
+  <% if @menu.friday%> - Viernes <br /> <%end%>
+  <% if @menu.saturday%> - Sábado <br /> <%end%>
+  <% if @menu.sunday%> - Domingo <br /> <%end%>
+</p>
+
+<p>
+  <b>Precio: </b>  $<%= @menu.price.humanize %>
+</p>
+
+<p>
+	<% if @menu.image? %>
+      <%= image_tag @menu.image.url(:medium) %>
+    <% end %>
+</p>
+
+
+<button><%= link_to 'Editar', :controller => "menus", :action => "edit", :id => @menu.id, :poi_id => @menu.poi_id  %></button>

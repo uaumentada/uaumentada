@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  message: MyText
+
+two:
+  user_id: 1
+  message: MyText
+
+# == Schema Information
+#
+# Table name: push_messages
+#
+#  id         :integer         not null, primary key
+#  user_id    :integer
+#  message    :text
+#  created_at :datetime
+#  updated_at :datetime
+#  sent       :boolean
+#
+

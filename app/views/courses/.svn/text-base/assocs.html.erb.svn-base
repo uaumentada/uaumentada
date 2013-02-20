@@ -1,0 +1,20 @@
+<h1>Listing asociaciones</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Course</th>
+  </tr>
+
+<% @courses.each do |course| %>
+<% course.users.each do |c| %>
+  <tr>
+    <td><%= c.email %></td>
+    <td><%= course.title %></td>
+  </tr>
+<% end %>
+<% end %>
+</table>
+
+<br />
+

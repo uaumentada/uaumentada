@@ -1,0 +1,60 @@
+<script>
+	jQuery(document).ready(function(){
+		jQuery("#form_user").validate();
+	});
+	
+  function callAjax(method, value, target)
+  {
+    if(encodeURIComponent) {
+      var req = new AjaxRequest();
+      var params = "method=" + method + "&value=" + encodeURIComponent(value) + "&target=" + target;
+      req.setMethod("POST");
+      req.loadXMLDoc('/scripts/validate.php', params);
+    }
+  }
+</script>
+
+<%= form_for @user, :html => {:id => 'form_user'} do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> no se creó el usuario:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Nombre Completo" %><font style="color:red">*</font> <br />
+    <%= f.text_field :name, :class => "required", :minlength => "5" %>
+  </div>
+  
+  
+  <% if session[:super_admin] %>
+      	<%= select("university", "id", University.all.collect {|r| [ r.name, r.id ] }) %><br />
+    <% else %>
+    	<label value="1"><%=@university.name %></label>
+    	<input type="text" id="university_id" name="university[id]" value="<%=@university.id %>" HIDDEN></input>
+    <% end %>
+  
+  <div class="field">
+    <%= f.label :email, "Usuario" %><font style="color:red">*</font> <br />
+    <%= f.text_field :email, :class => "required", :minlength => "5" %>
+    
+        
+    
+<div id="rsp_email"><!-- --></div>
+  </div>
+  <div class="field">
+    <%= f.label :password, "Contraseña" %><font style="color:red">* (mínimo 6 caracteres)</font> <br /> 
+    <%= f.password_field :password, :class => "password", :autocomplete => "off" %>
+  </div>
+
+<font style="color:red"> *campos obligatorios</font>  <br /> <br />
+  <div class="actions">
+    <%= f.submit 'Guardar'%>
+  </div>
+<% end %>

@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/puc-aumentada/!svn/ver/339/trunk/pucaumentada/test/fixtures
+END
+poi_types.yml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/poi_types.yml
+END
+surveys.yml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/puc-aumentada/!svn/ver/264/trunk/pucaumentada/test/fixtures/surveys.yml
+END
+buildings.yml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/buildings.yml
+END
+answers.yml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/fixtures/answers.yml
+END
+vertices.yml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/vertices.yml
+END
+market_items.yml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/market_items.yml
+END
+categories.yml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/categories.yml
+END
+menus.yml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/menus.yml
+END
+campus.yml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/campus.yml
+END
+universities.yml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/puc-aumentada/!svn/ver/339/trunk/pucaumentada/test/fixtures/universities.yml
+END
+questions.yml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/questions.yml
+END
+users.yml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/users.yml
+END
+contests.yml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/contests.yml
+END
+tokens.yml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/tokens.yml
+END
+events.yml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/events.yml
+END
+professors.yml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/professors.yml
+END
+push_messages.yml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/push_messages.yml
+END
+pois.yml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/pois.yml
+END
+indoor_maps.yml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/test/fixtures/indoor_maps.yml
+END

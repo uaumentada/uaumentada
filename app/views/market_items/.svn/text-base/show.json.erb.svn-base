@@ -1,0 +1,4 @@
+{"market_item":[
+ <%= raw @market_items.map{|item| '{"market_item": {"id":"' +"#{item.id}" +'","title":"' + "#{item.title}" +  '","description":"' +"#{item.description}" +'","username":"' + "#{item.user.email}" +  '"}}' }.join(",") %>
+]}
+

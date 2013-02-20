@@ -1,0 +1,45 @@
+<%= link_to "<--Volver", :back%>
+
+<h1>Listado de campuses de <%if !@university.nil?%><%= @university.name%><%end%><br /><%if !@university.nil?%>
+	<%= form_tag new_campu_path, method: :post %> 
+		<%= hidden_field_tag :university_id, @university.id %> 
+		<%= submit_tag 'Nuevo Campus' %> 
+	
+<%end%>
+</h1>
+<br/>
+<%if @campus.count == 0%><br />
+ No hay campuses para mostrar<br />
+ <%else%>
+
+<table>
+  <tr>
+<th>Nombre</th>
+	<%if @university.nil?%>
+    	<th>Universidad</th>
+    <%end%>
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+<% @campus.each do |campus| %>
+  <tr class="node <%= cycle("odd", "even") -%>">
+  	<td><%= campus.name %></td>
+  	<%if @university.nil?%>
+  		<% if !campus.university.nil?%>
+  			<td><%= campus.university.name%></td>
+  		<% else %>
+  			<td></td>
+  		<%end%>
+  	<%end%>
+    <td class="view"><%= link_to '', {:controller => :campus, :action => :show, :id => campus.id}, :class => "linkable" %></td>
+    <td class="edit"><%= link_to '', edit_campu_path(campus), :class => "linkable"  %></td>
+    <td class="delete"><%= link_to '', {:controller => :campus, :action => :destroy, :id => campus.id}, :confirm => 'Estás seguro de que quieres eliminar el campus?', :method => :delete, :class => "linkable"  %></td>
+  </tr>
+<% end %> 
+</table>
+<%end%>
+<br />
+
+<center><%= paginate @campus %></center>

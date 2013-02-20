@@ -1,0 +1,74 @@
+<script>
+	jQuery(document).ready(function(){
+		jQuery("#form_market").validate();
+	});
+	
+  function callAjax(method, value, target)
+  {
+    if(encodeURIComponent) {
+      var req = new AjaxRequest();
+      var params = "method=" + method + "&value=" + encodeURIComponent(value) + "&target=" + target;
+      req.setMethod("POST");
+      req.loadXMLDoc('/scripts/validate.php', params);
+    }
+  }
+</script>
+<script language="javascript">
+
+function on_load()
+{
+	<%if !session[:university].nil?%>
+	    <% campus = Campus.find(:all, :conditions => {:university_id => session[:university] }, :order => " name ASC")%>
+	<%else%>
+		<% campus = Campus.find(:all,:order => "name ASC")%>
+	<%end%>
+}
+</script>
+<body onload="on_load()">
+<%= form_for @market_item, :html => {:id => 'form_market' }   do |f| %>
+  <% if @market_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@market_item.errors.count, "error") %> prohibited this market_item from being saved:</h2>
+
+      <ul>
+      <% @market_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Titulo" %><font style="color:red">*</font>:<br />
+    <%= f.text_field :title, :class => "required", :minlength => "2" %>
+  </div>
+  <div class="field">
+    <%= f.label "Precio" %><font style="color:red">*</font>: (sólo números)<br />
+    $<%= f.text_field :price, :class => "number_required", :minlength => "3"  %>
+  </div>
+  Selecciona un campus donde deseas vender tu artículo:<br />
+    <% @campus = Campus.new %>
+    <% if !@market_item.id.nil?%> 
+			<% @campus.name = @market_item.campus.lat + "," + @market_item.campus.lng%>
+	<%else%>
+			<% @campus.name = campus[0].lat + ","+ campus[0].lng %>
+	<% end%>
+	
+	<%if !session[:university].nil?%>
+		 <%= select("campus", "name", campus.collect {|r| [ r.name, r.lat + "," + r.lng ] },  {:prompt => 'Selecciona un Campus'}, {:onchange => 'campus_change(this)'}) %></center>
+	<%else%>
+		<%= select("campus", "name", campus.collect {|r| [ r.name, r.lat + "," + r.lng ] },  {:prompt => 'Selecciona un Campus'}, {:onchange => 'campus_change(this)'}) %></center>
+	<%end%>
+  <br />
+  <div class="field">
+    <%= f.label "Descripción:" %><br />
+       <textarea id="market_item_description" name="market_item[description]" cols="30" rows="6" size="40" type="text"><%= @market_item.description%></textarea>
+  </div>
+
+ <input id="market_item_user_id" name="market_item[user_id]" value="<%= session[:user] %>" size="30" type="text" HIDDEN/>
+  <div class="actions">
+    <%= f.submit "Publicar" %>
+  </div>
+    <font style="color:red"> *campos obligatorios</font> 
+  
+<% end %>

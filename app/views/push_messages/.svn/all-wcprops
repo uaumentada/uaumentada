@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/puc-aumentada/!svn/ver/219/trunk/pucaumentada/app/views/push_messages
+END
+get_messages.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/219/trunk/pucaumentada/app/views/push_messages/get_messages.json.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/puc-aumentada/!svn/ver/206/trunk/pucaumentada/app/views/push_messages/_form.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/437/trunk/pucaumentada/app/views/push_messages/new.html.erb
+END

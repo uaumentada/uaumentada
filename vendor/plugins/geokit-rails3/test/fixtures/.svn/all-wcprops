@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/fixtures
+END
+mock_houses.yml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/fixtures/mock_houses.yml
+END
+stores.yml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/fixtures/stores.yml
+END
+mock_organizations.yml
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/fixtures/mock_organizations.yml
+END
+mock_families.yml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/fixtures/mock_families.yml
+END
+custom_locations.yml
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/fixtures/custom_locations.yml
+END
+mock_addresses.yml
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/fixtures/mock_addresses.yml
+END
+locations.yml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/fixtures/locations.yml
+END
+mock_people.yml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/fixtures/mock_people.yml
+END
+companies.yml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/fixtures/companies.yml
+END

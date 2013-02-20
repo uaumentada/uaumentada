@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/puc-aumentada/!svn/ver/341/trunk/pucaumentada/app/views/questions
+END
+survey_questions.xml.builder
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/99/trunk/pucaumentada/app/views/questions/survey_questions.xml.builder
+END
+survey_code.xml.builder
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/puc-aumentada/!svn/ver/341/trunk/pucaumentada/app/views/questions/survey_code.xml.builder
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/446/trunk/pucaumentada/app/views/questions/_form.html.erb
+END
+index.xml.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/39/trunk/pucaumentada/app/views/questions/index.xml.erb
+END
+no_permission.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/583/trunk/pucaumentada/app/views/questions/no_permission.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/107/trunk/pucaumentada/app/views/questions/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/581/trunk/pucaumentada/app/views/questions/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/445/trunk/pucaumentada/app/views/questions/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/puc-aumentada/!svn/ver/10/trunk/pucaumentada/app/views/questions/show.html.erb
+END

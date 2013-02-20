@@ -1,0 +1,30 @@
+<h1>Listado de menus <%if @poi %><%= @poi.name%><%end%> <button><%= link_to 'Nuevo Menu', :controller => "menus", :action => "new", :poi_id => @poi_id %></button></h1>
+<hr /><br />
+
+<%if @menus.size == 0%><br />
+ No hay menus para mostrar<br />
+ <% else %>
+
+<table>
+  <tr>
+    <th><%= sortable_menu "title", "Título", @poi_id %></th>
+    <th><%= sortable_menu "date", "Fecha término venta", @poi_id %></th>
+    <th><%= sortable_menu "price", "Precio", @poi_id %></th>
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+<% @menus.each do |menu| %>
+  <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= menu.title %></td>
+    <td><%= (menu.date.to_s)[0..-13] %></td>
+    <td>$<%= menu.price.humanize %></td>
+    <td class="view"><%= link_to ' ', {:controller => "menus", :action => "show", :id => menu.id, :poi_id => @poi_id }, :class => "linkable" %></td>
+    <td class="edit"><%= link_to '', {:controller => "menus", :action => "edit", :id => menu.id, :poi_id => @poi_id }, :class => "linkable" %></td>
+    <td class="delete"> <%= link_to '', menu, :confirm => 'Estás seguro?', :method => :delete , :class => "linkable" %></td>
+  </tr>
+<% end %>
+</table>
+<% end%>
+<br />

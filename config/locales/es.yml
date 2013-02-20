@@ -1,0 +1,7 @@
+es:
+  hello: "Hello world"
+  views:
+    pagination:
+      previous: "&lt; Anterior"
+      next: "Siguiente &gt;"
+      

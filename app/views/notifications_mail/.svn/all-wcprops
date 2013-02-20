@@ -1,0 +1,11 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/puc-aumentada/!svn/ver/452/trunk/pucaumentada/app/views/notifications_mail
+END
+new_message.text.erb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/puc-aumentada/!svn/ver/453/trunk/pucaumentada/app/views/notifications_mail/new_message.text.erb
+END

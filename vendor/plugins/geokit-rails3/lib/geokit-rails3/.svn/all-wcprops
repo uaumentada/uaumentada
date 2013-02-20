@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3
+END
+acts_as_mappable.rb
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/acts_as_mappable.rb
+END
+version.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/version.rb
+END
+ip_geocode_lookup.rb
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/ip_geocode_lookup.rb
+END
+core_extensions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/core_extensions.rb
+END
+defaults.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/defaults.rb
+END
+geocoder_control.rb
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/geocoder_control.rb
+END
+railtie.rb
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/railtie.rb
+END
+acts_as_mappable.old.rb
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/lib/geokit-rails3/acts_as_mappable.old.rb
+END

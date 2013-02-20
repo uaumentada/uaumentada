@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+  <h1><%= @category.name %></h1><br/> 
+
+
+<p align="center">
+	
+	<% if @category.icon? %>
+      <%= image_tag @category.icon.url(:high) %>
+    <% else%>
+      No hay ícono asignado
+    <% end %>
+</p>
+
+<%= link_to 'Editar', edit_category_path(@category) %> |
+<%= link_to 'Volver', categories_path %>

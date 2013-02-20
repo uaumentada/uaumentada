@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/puc-aumentada/!svn/ver/385/trunk/pucaumentada/app/models
+END
+survey.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/puc-aumentada/!svn/ver/589/trunk/pucaumentada/app/models/survey.rb
+END
+building.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/app/models/building.rb
+END
+user_course.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/app/models/user_course.rb
+END
+answer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/app/models/answer.rb
+END
+course.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/puc-aumentada/!svn/ver/586/trunk/pucaumentada/app/models/course.rb
+END
+market_item.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/puc-aumentada/!svn/ver/562/trunk/pucaumentada/app/models/market_item.rb
+END
+menu.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/puc-aumentada/!svn/ver/628/trunk/pucaumentada/app/models/menu.rb
+END
+question.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/puc-aumentada/!svn/ver/324/trunk/pucaumentada/app/models/question.rb
+END
+vertex.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/app/models/vertex.rb
+END
+survey_course.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/puc-aumentada/!svn/ver/64/trunk/pucaumentada/app/models/survey_course.rb
+END
+category.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/app/models/category.rb
+END
+user.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/puc-aumentada/!svn/ver/585/trunk/pucaumentada/app/models/user.rb
+END
+contest.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/puc-aumentada/!svn/ver/622/trunk/pucaumentada/app/models/contest.rb
+END
+token.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/puc-aumentada/!svn/ver/485/trunk/pucaumentada/app/models/token.rb
+END
+ads_point.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/puc-aumentada/!svn/ver/596/trunk/pucaumentada/app/models/ads_point.rb
+END
+university.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/puc-aumentada/!svn/ver/624/trunk/pucaumentada/app/models/university.rb
+END
+event.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/puc-aumentada/!svn/ver/622/trunk/pucaumentada/app/models/event.rb
+END
+professor.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/app/models/professor.rb
+END
+push_message.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/app/models/push_message.rb
+END
+message.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/puc-aumentada/!svn/ver/452/trunk/pucaumentada/app/models/message.rb
+END
+privilege.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/puc-aumentada/!svn/ver/264/trunk/pucaumentada/app/models/privilege.rb
+END
+poi.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/puc-aumentada/!svn/ver/595/trunk/pucaumentada/app/models/poi.rb
+END
+indoor_map.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/puc-aumentada/!svn/ver/262/trunk/pucaumentada/app/models/indoor_map.rb
+END
+poi_type.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/puc-aumentada/!svn/ver/297/trunk/pucaumentada/app/models/poi_type.rb
+END
+campus.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/puc-aumentada/!svn/ver/385/trunk/pucaumentada/app/models/campus.rb
+END

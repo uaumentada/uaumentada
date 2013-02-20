@@ -1,0 +1,6 @@
+<h1>Nuevo menu: <%if !@poi.nil? %>
+	
+	<%= @poi.name %>
+	<% end%></h1>
+
+<%= render 'form' %>

@@ -1,0 +1,3 @@
+{"notification":[
+ <%= raw @push_messages.map{|item| '{"id":"' +"#{item.id}" +'","message":"' + "#{item.message}" +  '","updated_at":"' +"#{item.updated_at}" +'"}' }.join(",") %>
+]}

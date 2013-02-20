@@ -1,0 +1,5 @@
+
+
+{"event":[
+ <%= raw @events.map{|item| '{"campus_id":"' +"#{item.campus_id}" +'","title":"' + "#{item.title}" +'","description":"' + "#{item.description} \nFecha Inicio: #{item.init_date.strftime("%d-%m-%Y - %H:%M")} \nFecha Término #{item.end_date.strftime("%d-%m-%Y - %H:%M")}"+  '","lat":"' + "#{item.lat}" +  '","lng":"' + "#{item.lng}" +  '","category_id":"' + "#{item.category_id}"+  '"}' }.join(",") %>
+]}

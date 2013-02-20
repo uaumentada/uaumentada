@@ -1,0 +1,6 @@
+<h1>Nueva notificación</h1>
+<hr />
+<br/>
+<%= render 'form' %>
+<br />
+*Este mensaje será enviado a todos los teléfonos suscritos para recibir mensajes.

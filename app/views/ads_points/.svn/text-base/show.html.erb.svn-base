@@ -1,0 +1,76 @@
+<%= javascript_include_tag "googlemaps.js" %>
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true" %>
+<script language="javascript">
+
+var map;
+var marker = null;
+function on_load()
+{
+
+  //centers the map at campus
+  map= new google.maps.Map(document.getElementById('map_canvas'), {
+  center: new google.maps.LatLng(<%= @ads_point.lat %>, <%= @ads_point.lng %>),
+  zoom: 17,
+  mapTypeId: google.maps.MapTypeId.HYBRID,
+  disableDefaultUI: true
+	});
+
+
+	marker = new google.maps.Marker({
+    position: new google.maps.LatLng(<%= @ads_point.lat.to_s %>, <%= @ads_point.lng.to_s %>),
+    map: map,
+    title: "Lugar del evento"
+ 	});
+
+}
+</script>
+<body onload="on_load()">
+	<%= link_to '<-- Volver', :ads_points, :class => "linkable"%>
+	<br />
+	<br />
+	<h1>Punto de Publicidad</h1>
+	<hr />
+	
+	
+<p id="notice"><%= notice %></p>
+<div style=" width:50%; height:50%; float:left">
+<p>
+  <b>Titulo:</b>
+  <%= @ads_point.title %>
+</p>
+
+
+
+<p>
+  <b>Campus:</b>
+  <%= @ads_point.campus.name %>
+</p>
+
+<% if @ads_point.contests.size > 0 || @ads_point.events.size > 0%>
+Afiches asignados: <br />
+<%end%>
+
+<% @ads_point.contests.each do |c| %>
+
+	<% if c.image? %>
+      <%= image_tag c.image.url(:thumb) %>
+    <% end %>
+
+<% end%>
+
+
+<% @ads_point.events.each do |e| %>
+
+	<% if e.image? %>
+      <%= image_tag e.image.url(:thumb) %>
+    <% end %>
+
+<% end%>
+
+</div>
+<!-- espacio del canvas del mapa -->
+<div style=" width:50%; height:50%; float:right">
+  <center><div id="map_canvas" style="width:330px; height:390px"></div></center>
+</div>
+
+<button><%= link_to 'Editar', edit_ads_point_path(@ads_point) %></button>

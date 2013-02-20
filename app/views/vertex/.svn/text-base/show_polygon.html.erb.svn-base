@@ -1,0 +1,68 @@
+	<%= link_to '<-- Volver', @poi%>
+	<br/>
+	<br />
+<h1> Polígono para <%= @building.poi.name%></h1>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<%= javascript_include_tag "googlemaps.js" %>
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true" %>
+<script language="javascript">
+	
+	function on_load()
+	{
+		
+		// Global variable for array of lines
+    	var points= [];
+    	
+    	<% if @vertex.size != 0 %>
+    		<% @vertex.each do |v| %>
+		 		var line = new google.maps.LatLng(<%= v.lat %>, <%= v.lng %>);
+	     		points.push(line);
+        	<% end %>
+		
+		var mapDiv = document.getElementById('map_canvas');
+  		var map = new google.maps.Map(mapDiv, {
+   					 center: new google.maps.LatLng(<%= @vertex[1].lat %>, <%= @vertex[1].lng %>),
+    				 zoom: 17,
+    				 mapTypeId: google.maps.MapTypeId.HYBRID,
+    				 disableDefaultUI: true
+  					});
+
+		marker = new google.maps.Marker({
+    			position: new google.maps.LatLng(<%= @building.poi.lat.to_s %>, <%= @building.poi.lng.to_s %>),
+    			map: map,
+    			title: "Lugar del evento"
+ 				});
+
+  shape = new google.maps.Polygon({
+  	path:points,
+    strokeColor: '#ff0000',
+     strokeOpacity: 0.8,
+    fillColor: "#FF0000",
+    strokeWeight: 2
+  });
+
+  shape.setMap(map);
+<% end %>
+	}
+	
+	
+</script>
+<body onload="on_load()">
+<br />
+	<% if @vertex.size != 0 %>
+		<%=button_to 'Cambiar polígono', :controller => 'vertex', :action => 'new_building', :building_id => @building.id %>
+		<div>
+  			<center><div id="map_canvas" style="width:90%; height:400px"></div></center>
+		</div>
+		<br />
+	<%= image_tag("pin.jpg")  %>: Centro del edificio (<%= link_to 'cambiar', :controller => :pois, :action => :edit_building, :id => @poi%>)
+
+	<% else %>
+			Aun no se ha creado un polígono para este edificio
+			<br />
+			<br />
+			<td><button><%= link_to 'Crear Polígono', :controller => "vertex", :action => "new_building", :poi_id => @poi.id %></button></td>
+	<% end %>
+	<br/>
+
+</body>

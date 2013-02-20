@@ -1,0 +1,7 @@
+<%= link_to '<-- Volver', ads_points_path %>
+<br /><br />
+<h1>Nuevo punto de publicidad</h1>
+<br />
+<%= render 'form' %>
+
+

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/puc-aumentada/!svn/ver/367/trunk/pucaumentada/app/views/market_items
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/455/trunk/pucaumentada/app/views/market_items/edit.html.erb
+END
+show.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/174/trunk/pucaumentada/app/views/market_items/show.json.erb
+END
+my_items.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/635/trunk/pucaumentada/app/views/market_items/my_items.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/632/trunk/pucaumentada/app/views/market_items/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/455/trunk/pucaumentada/app/views/market_items/new.html.erb
+END
+my_items.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/367/trunk/pucaumentada/app/views/market_items/my_items.json.erb
+END
+index.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/366/trunk/pucaumentada/app/views/market_items/index.json.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/630/trunk/pucaumentada/app/views/market_items/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/553/trunk/pucaumentada/app/views/market_items/_form.html.erb
+END
+no_permission.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/583/trunk/pucaumentada/app/views/market_items/no_permission.html.erb
+END

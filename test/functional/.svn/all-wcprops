@@ -1,0 +1,143 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional
+END
+surveys_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/surveys_controller_test.rb
+END
+answers_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/answers_controller_test.rb
+END
+market_items_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/market_items_controller_test.rb
+END
+categories_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/categories_controller_test.rb
+END
+menus_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/menus_controller_test.rb
+END
+campus_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/campus_controller_test.rb
+END
+universities_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/universities_controller_test.rb
+END
+questions_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/questions_controller_test.rb
+END
+contact_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/452/trunk/pucaumentada/test/functional/contact_controller_test.rb
+END
+start_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/43/trunk/pucaumentada/test/functional/start_controller_test.rb
+END
+users_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/users_controller_test.rb
+END
+contests_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/contests_controller_test.rb
+END
+tokens_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/tokens_controller_test.rb
+END
+ads_points_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/ads_points_controller_test.rb
+END
+events_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/events_controller_test.rb
+END
+indoor_mapping_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/puc-aumentada/!svn/ver/263/trunk/pucaumentada/test/functional/indoor_mapping_controller_test.rb
+END
+professors_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/professors_controller_test.rb
+END
+sessions_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/43/trunk/pucaumentada/test/functional/sessions_controller_test.rb
+END
+push_messages_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/puc-aumentada/!svn/ver/206/trunk/pucaumentada/test/functional/push_messages_controller_test.rb
+END
+notifications_mail_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/452/trunk/pucaumentada/test/functional/notifications_mail_test.rb
+END
+pois_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/320/trunk/pucaumentada/test/functional/pois_controller_test.rb
+END
+poi_types_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/puc-aumentada/!svn/ver/296/trunk/pucaumentada/test/functional/poi_types_controller_test.rb
+END
+vertex_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/puc-aumentada/!svn/ver/263/trunk/pucaumentada/test/functional/vertex_controller_test.rb
+END

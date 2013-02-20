@@ -1,0 +1,224 @@
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<%= javascript_include_tag "googlemaps.js" %>
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true" %>
+<script language="javascript">
+
+var map;
+var marker = null;
+
+	jQuery(document).ready(function(){
+		jQuery("#form_event").validate();
+	});
+	
+  function callAjax(method, value, target)
+  {
+    if(encodeURIComponent) {
+      var req = new AjaxRequest();
+      var params = "method=" + method + "&value=" + encodeURIComponent(value) + "&target=" + target;
+      req.setMethod("POST");
+      req.loadXMLDoc('/scripts/validate.php', params);
+    }
+  }
+
+
+function on_load()
+{
+
+  //centers the map at campus San Joaquin
+  <% if !@event.id.nil? %>
+  	var lat = <%= @event.lat %>;
+  	var lng = <%= @event.lng %>;
+	set_map_and_addons(lat,lng);
+	
+  <% else %>
+  
+  	//centers the map one campus
+  var lat;
+  var lng;
+  	<%if !session[:university].nil?%>
+	    <% campus = Campus.where("university_id = " +session[:university].to_s).first %>
+		lat = <%= campus.lat %>;
+		lng = <%= campus.lng %>;
+	<%else%>
+		<% campus = Campus.first %>
+		lat = <%= campus.lat %>;
+		lng = <%= campus.lng %>;
+	<%end%>
+  	set_map_and_addons(lat,lng);
+  <% end %> 
+
+  set_listeners();
+}
+
+function set_map_and_addons(lat, lng){
+	map= new google.maps.Map(document.getElementById('map_canvas'), {
+  		center: new google.maps.LatLng(lat,lng ),
+  		zoom: 16,
+  		mapTypeId: google.maps.MapTypeId.HYBRID,
+  		disableDefaultUI: true
+	});
+	
+	marker = new google.maps.Marker({
+    	position: new google.maps.LatLng(lat, lng),
+    	map: map,
+    	title: "Lugar del evento",
+  		draggable: true
+ 	});
+ 	
+ 	document.getElementById('event_lat').value = lat;
+    	document.getElementById('event_lng').value = lng;
+}
+
+function set_listeners(){
+
+	google.maps.event.addListener(marker, 'drag', function(event) {
+		
+	 	var lat = event.latLng.lat();
+	 	var lng = event.latLng.lng();
+  	
+  		document.getElementById('event_lat').value = lat;
+    	document.getElementById('event_lng').value = lng;
+  	
+	});
+
+	google.maps.event.addListener(map, 'click', function(event){
+		
+		var lat = event.latLng.lat();
+		var lng = event.latLng.lng();
+		
+     	document.getElementById('event_lat').value = lat;
+     	document.getElementById('event_lng').value = lng;
+
+	if (marker == null)
+	{
+		marker = new google.maps.Marker({
+      	position: new google.maps.LatLng(lat, lng),
+      	map: map,
+      	title:"Lugar del evento"
+  		});
+	}
+	else
+	{
+  		marker.setPosition( new google.maps.LatLng(lat, lng));
+	}
+});
+	
+}
+
+//Resets the map to the new campus selected
+function campus_change(sel)
+{
+
+marker = null;
+
+//Get the location of the selected campus
+var location = sel.options[sel.selectedIndex].value.split(",");
+var lat = parseFloat(location[0]);
+var lng = parseFloat(location[1]);
+ 
+	set_map_and_addons(lat,lng)
+	set_listeners();
+
+}
+
+</script>
+<body onload="on_load()">
+
+<%= form_for @event, :html => { :multipart => true, :id => 'form_event' }  do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "campo") %> prohiben crear el evento</h2>
+
+      <ul>
+      <% @event.errors.each do |attr,msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+<br/>
+<p id="notice"><%=flash[:notice]%></p>
+<div style=" width:60%; height:70%; float:right">
+
+
+  <div class="field">
+    <%= f.text_field :title, :class => "required", :minlength => "4", :placeholder => "Titulo" %>
+    <font style="color:red">*</font>
+  </div>
+
+	Categoría:
+  <%= select("event", "category_id", Category.all.collect {|r| [ r.name, r.id ] }) %>
+
+<br/>
+  <br/>
+    <div class="field">
+    <%= f.label "Imagen/Afiche:" %><font color="gray">(Tamaño menor a 2MB, Formato jpeg o png)</font>
+    <%= f.file_field :image%>
+  </div>
+  
+  <% if @event.image? %>
+	<input type="checkbox" name="delete_image" value="delete"> Eliminar imagen<br>
+  <% end %>
+ <%= image_tag @event.image.url(:thumb), :title => "imagen actual" unless !@event.image? %>
+ 
+  
+<div class="field">
+    <label for="event_Descripción">Descripción (<%= Pucaumentada::Application::MAX_CHARS %> caracteres):</label><br />
+    <textarea cols="30"  size="30" style="resize: none;" maxlength="<%= Pucaumentada::Application::MAX_CHARS %>" autocomplete="on" id="event_description" name="event[description]" rows="6"><%= @event.description%></textarea>
+  </div>
+
+<center>  
+<% @campus = Campus.new %>
+	<%if !session[:university].nil?%> <!-- Super admin -->
+	    <% campus = Campus.where("university_id = " +session[:university].to_s).first %>
+	    <% if !@event.id.nil?%> 
+			<% @campus.name = @event.campus.lat + "," + @event.campus.lng%>
+		<%else%>
+			<% @campus.name = campus.lat + ","+ campus.lng %>
+		<% end%>
+		Campus del evento: <%= select("campus", "name", Campus.where("university_id = " +session[:university].to_s).order("name ASC").collect {|r| [ r.name, r.lat + "," + r.lng ] },  {:prompt => 'Selecciona un Campus'}, {:onchange => 'campus_change(this)'}) %></center>
+	<%else%>
+		<% campus = Campus.first %>
+		<% if !@event.id.nil?%>
+			<% @campus.name = @event.campus.lat + "," + @event.campus.lng%>
+		<%else%>
+			<% @campus.name = campus.lat + ","+ campus.lng %>
+		<%end%>
+		Campus del evento: <%= select("campus", "name", Campus.find(:all,:order => "name ASC").collect {|r| [ r.name, r.lat + "," + r.lng ] },  {:prompt => 'Selecciona un Campus'}, {:onchange => 'campus_change(this)'}) %></center>
+	<%end%>
+
+<div style="font-style:italic;text-align:center;">Haz clic en el mapa en el lugar de tu evento<font style="color:red">*</font></div>
+<div id="map_canvas" style="width:380px; height:250px"></div></center>
+  <br />
+    <div class="actions">
+    <%= f.submit 'Guardar' %>
+  </div>
+  
+ </div>
+
+<div style=" width:40%; height:50%; float:left">
+   
+ 	<div style="float:left">
+		<font style="color:red">*</font>Fecha de Inicio: <br/>
+		<%= f.calendar_date_select :init_date, :embedded => true %>
+		<br/>
+		<font style="color:red">*</font>Fecha de Término: <br/>
+		<%= f.calendar_date_select :end_date, :embedded => true %>
+	
+	</div >
+	
+</div>
+
+
+
+
+<!-- Guarda la ubicación del evento -->
+<input type="text" id="event_lat"  name="event[lat]" HIDDEN></input>
+<input type="text" id="event_lng" name="event[lng]" HIDDEN></input>
+<br/>
+<br/>
+
+
+<% end %>
+</body>

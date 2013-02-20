@@ -1,0 +1,30 @@
+<h2>Mis cursos <button><%= link_to 'Nuevo Curso', :controller => :courses, :action => :new %></button></h2>
+<hr/> 
+ <%if @courses.size > 0%>
+ 
+<center>
+<table>
+  <tr>
+    <th>Sigla</th>
+    <th>Título</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+<% @courses.each do |course| %>
+  <tr>
+    <td><%= course.initials %></td>
+    <td><%= course.title %></td>
+    <td class="edit"><%= link_to '', edit_course_path(course), :class => "linkable" %></td>
+    <td class="delete"><%= link_to '', course, :confirm => 'Estás seguro que deseas eliminar el curso?', :method => :delete, :class => "linkable" %></td>
+  </tr>
+<% end %>
+</table>
+<%else%>
+<br />
+No existen cursos creados
+
+<%end%>
+</center>
+<br />
+

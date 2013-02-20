@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  phone_id: 1
+  platform: MyString
+  last_lat: 1.5
+  last_lng: 1.5
+
+two:
+  phone_id: 1
+  platform: MyString
+  last_lat: 1.5
+  last_lng: 1.5
+
+# == Schema Information
+#
+# Table name: tokens
+#
+#  id         :integer         not null, primary key
+#  phone_id   :string(255)
+#  platform   :string(255)
+#  last_lat   :float
+#  last_lng   :float
+#  created_at :datetime
+#  updated_at :datetime
+#
+

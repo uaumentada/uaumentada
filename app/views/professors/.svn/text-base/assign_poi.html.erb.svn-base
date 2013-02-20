@@ -1,0 +1,35 @@
+<h1>Listado de todas las oficinas</h1>
+
+<% if @pois.nil? || @pois.size == 0 %>
+<br/>
+No existen puntos creados
+<br />
+<% else %>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripción</th>
+    <th>Campus</th>
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+    <th></th>
+  </tr>
+
+<% @pois.each do |poi| %>
+  <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= poi.name %></td>
+    <td><%= poi.description %></td>
+    <td><%= poi.campus.name %></td>
+    <td class="view"><%= link_to '', poi, :class => "linkable" %></td>
+    <td class="edit"><%= link_to '', edit_poi_path(poi), :class => "linkable" %></td>
+    <td class="delete"><%= link_to '', poi, :confirm => 'Estás seguro? esta acción es irreversible', :method => :delete, :class => "linkable" %></td>
+    <td><%= button_to 'Asignar', :action => "assign", :poi_id => poi.id, :prof_id => @prof_id %></td>
+  </tr>
+<% end %>
+</table>
+
+<% end %>
+<br />
+
+<button><%= link_to 'Crear nuevo Punto', new_poi_path %></button>

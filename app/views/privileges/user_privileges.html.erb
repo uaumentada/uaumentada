@@ -1,0 +1,34 @@
+<h1>Listado de privilegios usuario: <%= @user.email %></h1>
+
+<br />
+Los cambios se harán efectivos una vez que el usuario vuelva a iniciar sesión.
+<br /><br />
+<table>
+  <tr>
+    <th>Privilegio</th>
+    <th>Acción</th>
+  </tr>
+<% @all_privileges.each do |privilege| %>
+
+<!-- Only superadmin can give super admin privileges -->
+<% if (privilege.description == "super_admin" && !session[:super_admin].nil? ) || privilege.description != "super_admin" %>
+<tr class="node <%= cycle("odd", "even") -%>">	
+	<% flag = false %>
+	<td><%= privilege.description %></td>
+<% @privileges.each do |user_priv| %>
+  
+  <%if privilege.id == user_priv.id%>
+    <td class="delete"><%= link_to '', {:controller => "privileges", :action => "remove_privilege", :method => :delete, :user_id => @user.id, :privilege_id => user_priv.id}, :confirm => 'Estás seguro que desea eliminar el privilegio?', :class => "linkable" %></td>
+  	<% flag = true %>   
+  <% end %>
+<% end %>
+
+    <% if !flag%>
+    	<td><%= button_to "Asignar", :controller => 'privileges', :action => 'assign', :privilege_id => privilege.id, :user_id => @user.id%></td>
+    <% end %>
+  </tr>
+<% end %>
+<% end %>
+</table>
+
+<br />

@@ -1,0 +1,46 @@
+<script>
+	jQuery(document).ready(function(){
+		jQuery("#form_university").validate();
+	});
+	
+  function callAjax(method, value, target)
+  {
+    if(encodeURIComponent) {
+      var req = new AjaxRequest();
+      var params = "method=" + method + "&value=" + encodeURIComponent(value) + "&target=" + target;
+      req.setMethod("POST");
+      req.loadXMLDoc('/scripts/validate.php', params);
+    }
+  }
+</script>
+
+<%= form_for @university, :html => { :multipart => true, :id => 'form_university' } do |f| %>
+  <% if @university.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@university.errors.count, "error") %> prohibited this university from being saved:</h2>
+
+      <ul>
+      <% @university.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Nombre" %><br />
+    <%= f.text_field :name, :class => "required", :minlength => "3"%>
+  </div>
+  <div class="field">
+    <%= f.label "Correo" %> (ej: uc.cl)<br />
+    @<%= f.text_field :email, :class => "required", :minlength => "4" %>
+  </div>
+    <div class="field">
+    <%= f.label "Logo" %><br />
+    <%= f.file_field :image %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit 'Guardar'%>
+  </div>
+<% end %>

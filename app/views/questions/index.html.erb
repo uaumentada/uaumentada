@@ -1,0 +1,89 @@
+<%= link_to "<-- Volver", :controller => :surveys, :action => :user_surveys %>
+
+<% if @survey %>
+<center><h2>Encuesta: "<%= @survey.title %>" </h2>
+	<%if !@survey.description.nil?%>
+	<br />
+	<font style="color:gray"><%= @survey.description%> </font> 
+	<% end %>
+</center>
+
+<hr />
+<% end %>
+<br />
+
+	<center>
+		<div style=" width:30%;float:right">
+			<%if @survey.privacy_level == Survey.privacy['Curso'] || @survey.privacy_level == Survey.privacy['Codigo'] %> 
+			<b>Código: <%= @survey.code %></b>
+		<img alt="Código QR de la encuesta" src="https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl=<%= @survey.code %>"/>
+		
+			<%end%>
+			 
+			 <%= button_to "Editar Encuesta", edit_survey_path(@survey)%>
+		
+		</div>
+		<div style=" width:70%;float:left">
+
+		</div>
+	</center>
+
+<% if @questions.length == 0 %>
+<center><p><br/><i>Comience su encuesta creando una pregunta </p></i></center>
+<%end%>
+
+
+	<div style="float: left; width: auto;">
+	<%= button_to 'Nueva Pregunta', :controller => :questions, :action => :new, :survey_id => params[:survey_id] %>
+	</div>
+	<%=button_to "Clonar Encuesta", :controller => "surveys", :action => "clone", :survey_id => @survey.id %>
+	
+	
+
+<% count_q = 0 %>
+<% @questions.each do |question| %>
+<% count_q = count_q + 1 %>
+<p> <%= link_to image_tag("arrow_up.png", :border => 0),:controller => :questions, :action => :move_up, :question_id => question.id, :survey_id => question.survey_id  %><%= link_to image_tag("arrow_down.png", :border => 0),:controller => :questions, :action => :move_down, :question_id => question.id %>            
+	<%= count_q %>. 
+	<%= question.question %>  
+	<% if question.mandatory %> <font color="red">* Obligatoria </font> <% end %> 
+		<%= link_to 'Editar', :controller => :questions, :action => :edit, :id => question.id, :survey_id => params[:survey_id] %> |  <%= link_to 'Eliminar', question, :confirm => 'Estas seguro que deseas eliminarla?', :method => :delete %> 
+
+<% if question.help %>
+<i><br/><%= question.help %></i>
+<% end %><p>
+              <% if question.question_type == 0 %> <!--text-->
+                <input id="q" name="q" type="text" DISABLED/>
+              <% elsif question.question_type == 1%>  <!--Selectbox-->
+                 <% @answers = question.answers.split(';')%>
+                    
+                    <select name="<% question.id %>">
+                    <% count = 1 %>
+                    <%@answers.each do |answer| %>
+                       <option value="<%= count %>"><%= answer%></option>
+                      <% count = count + 1 %>
+                     <% end %> <!-- do answers -->
+                    </select>
+
+              <%elsif question.question_type == 2%> <!--Checkbox-->
+                     <% @answers = question.answers.split(';')%>
+                     <%@answers.each do |answer| %>
+                        <input type="checkbox"><%= answer%></input><br/>
+                     <% end %> <!-- do answers -->
+        
+		<%elsif question.question_type == 3%> <!--Radio button-->
+                     <% @answers = question.answers.split(';')%>
+                     <%@answers.each do |answer| %>
+                        <input type="radio" name="radios" ><%= answer%></input><br/>
+                     <% end %> <!-- do answers -->
+              <% end %> <!-- if text -->
+         
+     </p></p>
+<hr/>
+      <% end %><!-- do questions -->
+
+<% if count_q > 4 %> <!-- mostrar boton Nueva pregunta en la parte inferior si es que hay mas de 4 -->
+<center><%= button_to 'Nueva Pregunta', :controller => :questions, :action => :new, :survey_id => params[:survey_id] %></center>
+<% end %>
+<br />
+<br />

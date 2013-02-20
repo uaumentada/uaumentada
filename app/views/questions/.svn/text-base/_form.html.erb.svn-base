@@ -1,0 +1,71 @@
+<head>
+<script>
+function change(){
+
+if (document.getElementById("text").selected == false)
+{
+   document.getElementById("answers").hidden = false;
+}
+else
+{
+     document.getElementById("answers").hidden = true;
+}
+
+}
+
+</script>
+</head>
+
+<%= form_for @question do |f| %>
+  <% if @question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+      <ul>
+      <% @question.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Tipo de pregunta" %><br />
+    <!-- <%= f.select :question_type, [['Texto', 0],['Checkboxes', 2],['Selectbox',1],['Radio button',3]], {"onchange" => "alert('test');" }%> -->
+    <select class="typee" id="question_question_type" name="question[question_type]" onchange="change()">
+<option value="0" id="text" <% if !@question.question_type.nil? && @question.question_type == 0 %> selected="true" <% end %> >Texto</option>
+<option value="1" <% if !@question.question_type.nil? && @question.question_type == 1 %> selected="true" <% end %> >Select box (Listado con selección única)</option>
+<option value="2" <% if !@question.question_type.nil? && @question.question_type == 2 %> selected="true" <% end %> >Checkbox (Selección multiple)</option>
+<option value="3"<% if !@question.question_type.nil? && @question.question_type == 3 %> selected="true" <% end %> >Radio buttons (Selección única)</option>
+</select> 
+  
+</div>
+  <div class="field">
+    <%= f.label "Pregunta" %><br />
+    <%= f.text_field :question %>
+  </div>
+  <div class="field">
+    <%= f.label "Texto de ayuda" %><br />
+    <%= f.text_field :help %>
+  </div>
+<% if !@question.question_type.nil? && @question.question_type != 0 %>
+<div id="answers">
+<% else %>
+<div id="answers" HIDDEN>
+<% end %>
+  <div class="field">
+    <%= f.label "Respuestas (separarlas con punto y coma )" %><br />
+    <%= f.text_field :answers %>
+  </div>
+</div>
+<!--
+  <div class="field">
+    <%= f.check_box :mandatory %> <%= f.label "Pregunta Obligatoria" %>
+  
+  </div> -->
+<input type="hidden" name="question[survey_id]" value="<%=params[:survey_id]%>" />
+
+  <div class="actions">
+    <%= f.submit "Aceptar" %>
+  </div>
+<% end %>

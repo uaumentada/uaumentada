@@ -1,0 +1,31 @@
+<h1>Listing professors</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Status</th>
+    <th>Poi</th>
+    <th>Approved</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @professors.each do |professor| %>
+  <tr>
+    <td><%= professor.user.name %></td>
+    <td><%= professor.status %></td>
+    <td><%= professor.poi_id %></td>
+    <td><%= professor.approved %></td>
+    <td><%= link_to 'Grant', :controller => "professors", :action => "assign_poi" %></td>
+    <td><%= link_to 'Show', professor %></td>
+    <td><%= link_to 'Edit', edit_professor_path(professor) %></td>
+    <td><%= link_to 'Destroy', professor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Professor', new_professor_path %>

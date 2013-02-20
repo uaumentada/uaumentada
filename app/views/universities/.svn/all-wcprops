@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/puc-aumentada/!svn/ver/390/trunk/pucaumentada/app/views/universities
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/400/trunk/pucaumentada/app/views/universities/_form.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/290/trunk/pucaumentada/app/views/universities/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/437/trunk/pucaumentada/app/views/universities/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/290/trunk/pucaumentada/app/views/universities/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/400/trunk/pucaumentada/app/views/universities/show.html.erb
+END

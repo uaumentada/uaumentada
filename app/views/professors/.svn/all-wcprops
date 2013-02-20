@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/puc-aumentada/!svn/ver/384/trunk/pucaumentada/app/views/professors
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/188/trunk/pucaumentada/app/views/professors/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/185/trunk/pucaumentada/app/views/professors/new.html.erb
+END
+assign_poi.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/381/trunk/pucaumentada/app/views/professors/assign_poi.html.erb
+END
+index.json.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/193/trunk/pucaumentada/app/views/professors/index.json.erb
+END
+petitions.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/292/trunk/pucaumentada/app/views/professors/petitions.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/185/trunk/pucaumentada/app/views/professors/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/185/trunk/pucaumentada/app/views/professors/_form.html.erb
+END
+checkin.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/384/trunk/pucaumentada/app/views/professors/checkin.html.erb
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/185/trunk/pucaumentada/app/views/professors/edit.html.erb
+END

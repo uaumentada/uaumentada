@@ -1,0 +1,5 @@
+<h2>Nuevo Administrador</h2>
+<hr/>
+<%= render 'form' %>
+
+<%= link_to 'Volver', :back %>

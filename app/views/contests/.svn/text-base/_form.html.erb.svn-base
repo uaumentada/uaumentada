@@ -1,0 +1,72 @@
+<script>
+	jQuery(document).ready(function(){
+		jQuery("#form_contest").validate();
+	});
+	
+  function callAjax(method, value, target)
+  {
+    if(encodeURIComponent) {
+      var req = new AjaxRequest();
+      var params = "method=" + method + "&value=" + encodeURIComponent(value) + "&target=" + target;
+      req.setMethod("POST");
+      req.loadXMLDoc('/scripts/validate.php', params);
+    }
+  }
+</script>
+
+<%= form_for @contest, :html => { :multipart => true, :id => 'form_contest' } do |f| %>
+  <% if @contest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contest.errors.count, "error") %> prohibited this contest from being saved:</h2>
+
+      <ul>
+      <% @contest.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p id="notice"><%=flash[:notice]%></p>
+<div style=" width:60%; height:70%; float:right">
+  <div class="field">
+    <%= f.label "Título" %><font style="color:red">*</font><br />
+    <%= f.text_field :title, :class => "required", :minlength => "4" %>
+  </div>
+  <div class="field">
+    <%= f.label "Descripción" %><br />
+    <textarea cols="30"  size="30" style="resize: none;" id="contest_description" name="contest[description]" rows="6"><%=@contest.description%></textarea>
+  </div>
+  <div class="field">
+    <%= f.label "Organiza" %><font style="color:red">*</font><br />
+    <%= f.text_field :organizer, :class => "required", :minlength => "2" %>
+  </div>
+  <div class="field">
+    <%= f.label "Imagen/Afiche" %><br /><font color="gray">(Tamaño menor a 2MB, Formato jpeg o png)</font>
+    <%= f.file_field :image %>
+  </div>
+  
+   <% if @contest.image? %>
+	<input type="checkbox" name="delete_image" value="delete"> Eliminar imagen<br>
+  <% end %>
+ <%= image_tag @contest.image.url(:thumb), :title => "imagen actual" unless !@contest.image? %>
+ 
+ </div> 
+  <div style=" width:40%; height:50%; float:left">
+   
+ 	<div style="float:left">
+		<font style="color:red">*</font>Fecha de Inicio: <br/>
+		<%= f.calendar_date_select :init_date, :embedded => true %>
+		<br/>
+		<font style="color:red">*</font>Fecha de Término: <br/>
+		<%= f.calendar_date_select :end_date, :embedded => true %>
+	
+	</div >
+	
+</div>
+  
+  <font style="color:red"> *campos obligatorios</font> 
+  
+  <div class="actions">
+    <%= f.submit 'Guardar'%>
+  </div>
+<% end %>

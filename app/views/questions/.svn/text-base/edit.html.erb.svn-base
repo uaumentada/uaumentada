@@ -1,0 +1,7 @@
+
+<h2>Editar pregunta </h2>
+
+<%= render 'form' %>
+
+<%= link_to_function 'Cancelar', 'history.back()', :confirm => 'Los cambios no han sido guardados' %>
+

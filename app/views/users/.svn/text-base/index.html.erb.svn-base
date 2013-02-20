@@ -1,0 +1,50 @@
+<head>
+	<%= javascript_include_tag :defaults %>
+	
+</head>
+
+<h1>Listado de usuarios &nbsp;&nbsp;<button><%= link_to 'Nuevo Usuario', new_user_path %></button>
+<%if !session[:super_admin].nil?%>
+	<button><a href="<%= url_for :controller => :users, :action => :new_admin %>" >Crear Administrador</a></button>
+<% end %>
+	<br /></h1><hr /><br/>
+
+<% if @users.size == 0 %>
+<br/>
+No existen usuarios creados
+<br />
+<% else %>
+<table>
+  <tr>
+    <th><%= sortable "name", "Nombre" %></th>
+    <th><%= sortable "email", "Usuario" %></th>
+    <% if session[:super_admin] %>
+    	<th><%= sortable "university_id", "Universidad" %></th>
+    <%end%>
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <% if session[:super_admin] %>
+    <%if !user.university.nil? %>
+    	<td><%= user.university.name %></td>
+    <%else%>
+    	<td></td>
+    <%end%>
+    <%end%>
+    <td class="view"><%= link_to '', user, :class => "linkable" %></td>
+    <td class="edit"><%= link_to '', edit_user_path(user), :class => "linkable" %></td>
+    <td class="delete"><%= link_to '', user, :confirm => 'Estás seguro? Esta acción es irreversible', :method => :delete, :class => "linkable" %></td>
+    <td> <%= link_to 'Privilegios', { :controller => 'privileges', :action => 'user_privileges', :user_id => user.id }%></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+<center><%= paginate @users%></center>
+

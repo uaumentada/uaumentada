@@ -1,0 +1,30 @@
+<h1>Listados de puntos de publicidad <button><%= link_to 'Crear punto de publicidad', new_ads_point_path %></button></h1>
+<hr />
+<% if @all_ads.size == 0 %>
+<br/>
+No existen puntos creados
+<br />
+<% else %>
+<table>
+  <tr>
+	<th><%= sortable "title", "Título" %></th>
+    <th><%= sortable "campus_id", "Campus" %></th>
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+<% @all_ads.each do |ads_point| %>
+  <tr  class="node <%= cycle("odd", "even") -%>">
+    <td><%= ads_point.title %></td>
+    <td><%= ads_point.campus.name %></td>
+    <td class="view"><%= link_to '', ads_point, :class => "linkable" %></td>
+    <td class="edit"><%= link_to '', edit_ads_point_path(ads_point), :class => "linkable" %></td>
+    <td class="delete"><%= link_to '', ads_point, :confirm => 'Are you sure?', :method => :delete, :class => "linkable" %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+<br />
+<center><%= paginate @all_ads%></center>

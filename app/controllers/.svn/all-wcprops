@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/puc-aumentada/!svn/ver/389/trunk/pucaumentada/app/controllers
+END
+questions_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/592/trunk/pucaumentada/app/controllers/questions_controller.rb
+END
+contact_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/453/trunk/pucaumentada/app/controllers/contact_controller.rb
+END
+start_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/603/trunk/pucaumentada/app/controllers/start_controller.rb
+END
+users_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/581/trunk/pucaumentada/app/controllers/users_controller.rb
+END
+contests_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/puc-aumentada/!svn/ver/611/trunk/pucaumentada/app/controllers/contests_controller.rb
+END
+application_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/2/trunk/pucaumentada/app/controllers/application_controller.rb
+END
+ads_points_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/621/trunk/pucaumentada/app/controllers/ads_points_controller.rb
+END
+tokens_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/484/trunk/pucaumentada/app/controllers/tokens_controller.rb
+END
+events_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/621/trunk/pucaumentada/app/controllers/events_controller.rb
+END
+professors_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/618/trunk/pucaumentada/app/controllers/professors_controller.rb
+END
+sessions_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/puc-aumentada/!svn/ver/636/trunk/pucaumentada/app/controllers/sessions_controller.rb
+END
+push_messages_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/puc-aumentada/!svn/ver/443/trunk/pucaumentada/app/controllers/push_messages_controller.rb
+END
+privileges_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/457/trunk/pucaumentada/app/controllers/privileges_controller.rb
+END
+pois_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/puc-aumentada/!svn/ver/614/trunk/pucaumentada/app/controllers/pois_controller.rb
+END
+indoor_maps_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/puc-aumentada/!svn/ver/395/trunk/pucaumentada/app/controllers/indoor_maps_controller.rb
+END
+poi_types_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/puc-aumentada/!svn/ver/297/trunk/pucaumentada/app/controllers/poi_types_controller.rb
+END
+vertex_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/576/trunk/pucaumentada/app/controllers/vertex_controller.rb
+END
+surveys_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/591/trunk/pucaumentada/app/controllers/surveys_controller.rb
+END
+answers_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/493/trunk/pucaumentada/app/controllers/answers_controller.rb
+END
+courses_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/puc-aumentada/!svn/ver/586/trunk/pucaumentada/app/controllers/courses_controller.rb
+END
+market_items_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/617/trunk/pucaumentada/app/controllers/market_items_controller.rb
+END
+categories_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/puc-aumentada/!svn/ver/597/trunk/pucaumentada/app/controllers/categories_controller.rb
+END
+menus_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/puc-aumentada/!svn/ver/611/trunk/pucaumentada/app/controllers/menus_controller.rb
+END
+campus_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/puc-aumentada/!svn/ver/513/trunk/pucaumentada/app/controllers/campus_controller.rb
+END
+universities_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/puc-aumentada/!svn/ver/438/trunk/pucaumentada/app/controllers/universities_controller.rb
+END

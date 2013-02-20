@@ -1,0 +1,42 @@
+<h1>Listado de Concursos <button><%= link_to 'Crear Concurso', new_contest_path %></button></h1>
+<hr />
+<%= form_tag({:controller => "contests", :action => "my_contests"}, :method => :get) do %>
+  
+    <%= text_field_tag "searchbox", params[:searchbox] %>
+    <%= submit_tag "Buscar", :name => nil %>
+  
+<% end %>
+<% if @contests.size == 0 %>
+<br/>
+No hay concursos para mostrar
+<br />
+<% else %>
+<table>
+  <tr>
+    <th><%= sortable "title", "Título" %></th>
+    <th><%= sortable "init_date", "Fecha Inicio" %></th>
+    <th><%= sortable "end_date", "Fecha Fin"  %></th>
+    <th><%= sortable "organizer", "Organiza" %></th>
+    
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+<% @contests.each do |contest| %>
+  <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= contest.title %></td>
+    <td><%= contest.init_date.strftime("%d/%m/%Y - %H:%M")%></td>
+    <td><%= contest.end_date.strftime("%d/%m/%Y - %H:%M") %></td>
+    <td><%= contest.organizer %></td>
+    
+    <td class="view"><%= link_to '', contest , :class => "linkable" %></td>
+    <td class="edit"><%= link_to '', edit_contest_path(contest) , :class => "linkable" %></td>
+    <td class="delete"><%= link_to '', contest, :confirm => 'Estás seguro? Esta acción es irreversible', :method => :delete, :class => "linkable"  %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+<br />
+<center><%= paginate @contests %></center>
+

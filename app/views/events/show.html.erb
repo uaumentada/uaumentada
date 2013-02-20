@@ -1,0 +1,67 @@
+<%= javascript_include_tag "googlemaps.js" %>
+<%= javascript_include_tag "http://maps.google.com/maps/api/js?sensor=true" %>
+<script language="javascript">
+
+var map;
+var marker = null;
+
+function on_load()
+{
+
+  //centers the map at the event
+  map= new google.maps.Map(document.getElementById('map_canvas'), {
+  center: new google.maps.LatLng(<%= @event.lat %>, <%= @event.lng %>),
+  zoom: 17,
+  mapTypeId: google.maps.MapTypeId.HYBRID,
+  disableDefaultUI: true
+});
+
+
+marker = new google.maps.Marker({
+    position: new google.maps.LatLng(<%= @event.lat.to_s %>, <%= @event.lng.to_s %>),
+    map: map,
+    title: "Lugar del evento"
+ });
+
+}
+</script>
+<body onload="on_load()">
+	<%= link_to '<-- Volver', :user_events, :class => "linkable"%> 
+<p id="notice"><%= notice %></p>
+
+<div style=" width:50%; height:50%; float:left">
+	
+<p>
+  <b>  <%= @event.title %> </b>
+  <br /><pre>
+  <b>Campus del evento: </b><%= @event.campus.name %>
+   <b>Fecha Inicio:</b>
+      <%= @event.init_date.strftime("%d/%m/%Y - %H:%M") %><br/>
+  <b>Feha Término:</b> 
+    <%= @event.end_date.strftime("%d/%m/%Y - %H:%M") %>
+    </pre>
+  <br/>
+  <%= @event.description %>
+  <br/><br/>
+
+</p>
+</div>
+<!-- espacio del canvas del mapa -->
+<div style=" width:50%; height:50%; float:right">
+  <center><div id="map_canvas" style="width:330px; height:390px"></div></center>
+</div>
+
+<p align="center">
+	
+	<% if @event.image? %>
+      <%= image_tag @event.image.url(:medium) %>
+      <%= button_to "Publicidad", :controller => 'ads_points', :action => "index_ads_events", :event_id => @event.id%>
+    <% end %>
+
+</p>
+
+<button><%= link_to 'Editar', edit_event_path(@event) %></button> 
+<button><%= link_to 'Eliminar', @event, :confirm => 'Estás seguro? esta acción es irreversible', :method => :delete %></button>
+<br/><br/>
+
+</body>

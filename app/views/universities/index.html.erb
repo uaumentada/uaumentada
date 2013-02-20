@@ -1,0 +1,27 @@
+<h1>Universidades <button><%= link_to 'Nueva Universidad', new_university_path %></button></h1>
+<hr />
+<table>
+  <tr>
+    <th><%= sortable "name", "Nombre" %></th>
+    <th><%= sortable "email", "Email" %></th>
+    <th>Campuses</th>
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+<% @universities.each do |university| %>
+  <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= university.name %></td>
+    <td><%= university.email %></td>
+    <td ><%= link_to 'Campuses', :controller => "campus", :action => "index", :university_id => university.id %></td>
+    <td class="view"><%= link_to '', university, :class => "linkable" %></td>
+    <td class="edit"><%= link_to '', edit_university_path(university), :class => "linkable" %></td>
+    <td class="delete"><%= link_to '', university, :confirm => 'Estás seguro?', :method => :delete, :class => "linkable"%></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+

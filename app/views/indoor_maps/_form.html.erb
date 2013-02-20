@@ -1,0 +1,38 @@
+<script>
+	jQuery(document).ready(function(){
+		jQuery("#form_indoor").validate();
+	});
+	
+  function callAjax(method, value, target)
+  {
+    if(encodeURIComponent) {
+      var req = new AjaxRequest();
+      var params = "method=" + method + "&value=" + encodeURIComponent(value) + "&target=" + target;
+      req.setMethod("POST");
+      req.loadXMLDoc('/scripts/validate.php', params);
+    }
+  }
+</script>
+
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<body>
+	
+<center>
+	<div class="display">
+		<% if @building.floors > 0 %>
+		
+			<%= form_for @indoor_map, :html => { :multipart => true, :id => 'form_indoor' } do |f| %>
+			<br/>  
+        	Piso: <%= f.select  :floor, 1..@building.floors %>
+    		<%= f.file_field :image, :class => "required" %>
+    		<input id="indoor_map[building_id]" name="indoor_map[building_id]" value="<%= @building.id %>" HIDDEN/>
+    		<%= f.submit 'Subir imagen'%>
+    		<% end %>
+    <% else %>
+    <br />
+    	No se ha definido el número de pisos para este edificio. Edítalo <%= link_to 'aquí', {:controller => "pois", :action => "edit_building", :id => @building.poi.id}%> 
+    <% end %>	
+</body>
+
+</div>
+

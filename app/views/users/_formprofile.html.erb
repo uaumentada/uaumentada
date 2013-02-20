@@ -1,0 +1,39 @@
+<script>
+	jQuery(document).ready(function(){
+		jQuery("#form_user").validate();
+	});
+	
+  function callAjax(method, value, target)
+  {
+    if(encodeURIComponent) {
+      var req = new AjaxRequest();
+      var params = "method=" + method + "&value=" + encodeURIComponent(value) + "&target=" + target;
+      req.setMethod("POST");
+      req.loadXMLDoc('/scripts/validate.php', params);
+    }
+  }
+</script>
+
+<%= form_for @user, :url => url_for(:controller => 'users', :action => 'update_profile', :id => @user.id), :html => {:id => 'form_user'} do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Nombre" %><font style="color:red">*</font> <br />
+    <%= f.text_field :name, :class => "required", :minlength => "2"%>
+  </div>
+
+<font style="color:red"> *campos obligatorios</font>  <br /> <br />
+  <div class="actions">
+    <%= f.submit 'Guardar', :from => "profile"%>
+  </div>
+<% end %>

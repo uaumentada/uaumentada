@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test
+END
+acts_as_mappable_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/acts_as_mappable_test.rb
+END
+test_helper.rb
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/test_helper.rb
+END
+schema.rb
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/schema.rb
+END
+database.yml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/database.yml
+END
+boot.rb
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/boot.rb
+END
+tasks.rake
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/tasks.rake
+END
+ip_geocode_lookup_test.disabled.rb
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/puc-aumentada/!svn/ver/127/trunk/pucaumentada/vendor/plugins/geokit-rails3/test/ip_geocode_lookup_test.disabled.rb
+END

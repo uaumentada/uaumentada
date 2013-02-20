@@ -1,0 +1,51 @@
+<h1>Listado de items del mercado  <button><%= link_to 'Nuevo item', new_market_item_path %></button></h1>
+<i>Recuerda que este listado es sencillo ya que está diseñado para visualizarlo a través de un smartphone</i>
+<hr />
+<%= form_tag({:controller => "market_items", :action => "index"}, :method => :get) do %>
+  
+    <%= text_field_tag "searchbox", params[:searchbox] %>
+    <%= submit_tag "Buscar", :name => nil %>
+  
+<% end %>
+<% if @market_items.size == 0 %>
+<br/>
+No hay items para mostrar
+<br />
+<% else %>
+<table>
+  <tr>
+    <th><%= sortable "title", "Título" %></th>
+    <th><%= sortable "price", "Precio" %></th>
+    <th><%= sortable "user.name", "Nombre" %></th>
+    <th><%= sortable "campus.name", "Campus" %></th>
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+<% @market_items.each do |market_item| %>
+  <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= link_to market_item.title, market_item %></td>
+    <td>$<%= market_item.price.humanize %></td>
+    <td><%= market_item.user.email %></td>
+    <%if !market_item.campus.nil? %>
+    	<td><%= market_item.campus.name %></td>
+    <% else %>
+    	<td>No definido</td>
+    	<%end%>
+    <td class="view"><%= link_to '', market_item, :class => "linkable" %></td>
+    <% if market_item.user.id == session[:user]%>
+    	<td class="edit"><%= link_to '', edit_market_item_path(market_item), :class => "linkable"  %></td>
+    	<td class="delete"><%= link_to '', market_item, :confirm => 'Estás seguro? Esta acción es irreversible', :method => :delete , :class => "linkable"  %></td>
+    <%else%>
+    <td><center> --- </center></td>
+    <td><center> --- </center></td>
+    <% end%>
+     </tr>
+<% end %>
+</table>
+<center><%= paginate @market_items %></center>
+<% end %>
+<br />
+
+

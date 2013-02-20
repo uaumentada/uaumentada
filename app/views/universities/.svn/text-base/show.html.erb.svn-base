@@ -1,0 +1,25 @@
+
+
+<p id="notice"><%= notice %></p>
+
+<%= link_to '<--Volver', universities_path %>
+<br />
+<br />
+<p style="float: left; width: 20%;">
+	
+	<% if @university.image? %>
+      <%= image_tag @university.image.url(:thumb) %>
+    <% end %>
+</p>
+<p>
+  <b>Nombre:</b>
+  <%= @university.name %>
+</p>
+
+<p>
+  <b>E-Mail:</b>
+  <%= @university.email %>
+</p>
+
+<button><%= link_to 'Editar', edit_university_path(@university) %></button>
+

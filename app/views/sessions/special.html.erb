@@ -1,0 +1,40 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Login Box HTML Code - www.PSDGraphics.com</title>
+<link href="login-box.css" rel="stylesheets" type="text/css" />
+</head>
+
+<body>
+<center>
+	<b>Login para usuarios especiales</b> 
+	<br/>
+	<br/>
+		<% if flash[:notice] %>
+		<span style="color:red;"> <%= flash[:notice] %></span>
+	<% end %>
+<div id="special-login-box">
+	<%= form_tag :login_special, :method => 'POST' do %>
+	Selecciona tu universidad: <br />
+	<%= select("university", "id", University.all.collect {|r| [ r.name, r.id ] }) %>
+	<br />
+	<br />
+		<div align="right"  >Usuario:	
+			<input name="email" class="form-login" align="vertical-align: left" title="Username" value="" size="17" maxlength="2048" /> 
+		</div>
+		<div align="right">Contraseña:
+			<input name="password" align="left" type="password" class="form-login" title="Password" value="" size="17" maxlength="2048" />
+			</div>
+		<br />
+		<input name="btnEntrar" value="" type="hidden" />
+		<center>
+			<button type="submit" alt="Enviar" onclick="btnEntrar.value = 'submit'">Iniciar Sesión</button>
+		</center>
+	<% end %> 
+</div></center>
+<div align="right">
+	<br />
+	Ingresa como <%= link_to 'Usuario normal', :root %>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,7 @@
+{"ads_point":[
+ <% if @ads_point.events.count > 0 %>
+ <%= raw @ads_point.events.map{|item| '{"image":"' +"#{item.image.url}" +  '"}' }.join(",") %>
+ <% end %>
+ <% if @ads_point.events.count > 0 && @ads_point.contests.count > 0 %> , <% end %>
+ <%= raw @ads_point.contests.map{|item| '{"image":"' +"#{item.image.url}" +  '"}' }.join(",") %>
+]}

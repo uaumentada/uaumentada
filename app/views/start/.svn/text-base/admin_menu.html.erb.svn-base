@@ -1,0 +1,16 @@
+Bienvenido <%= @user.name %>,
+<br /><br />
+Actualmente tiene <%= @petitions.size%> <a href="<%= url_for :controller => :professors, :action => :petitions %>" ><% if @petitions.size == 1%> solicitud
+<%else%>solicitudes<% end%></a> en espera
+<br /><br />
+<% if session[:super_admin]%>
+
+<%= button_to 'Nueva universidad', :controller => "universities", :action => "new"%>
+<%= link_to 'Administrar Universidades', :controller => "universities", :action => "index"%>
+<% elsif session[:admin]%>
+
+<%= button_to 'Nuevo Campus', :controller => "campus", :action => "new"%>
+
+<% end%>
+
+

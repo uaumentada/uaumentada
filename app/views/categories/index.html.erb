@@ -1,0 +1,23 @@
+<h1>Listados de categorias para eventos</h1>
+
+<table>
+  <tr>
+  	<th><%= sortable "name", "Nombre" %></th>
+    <th>Ver</th>
+    <th>Editar</th>
+    <th>Eliminar</th>
+  </tr>
+
+<% @categories.each do |category| %>
+ <tr class="node <%= cycle("odd", "even") -%>">
+    <td><%= category.name %></td>
+    <td class="view"><%= link_to '', category, :class => "linkable"  %></td>
+    <td class="edit"><%= link_to '', edit_category_path(category), :class => "linkable"  %></td>
+    <td class="delete"><%= link_to '', category, :confirm => 'Estás seguro?', :method => :delete, :class => "linkable"  %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo', new_category_path %>

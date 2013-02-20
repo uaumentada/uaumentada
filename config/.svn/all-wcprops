@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/puc-aumentada/!svn/ver/388/trunk/pucaumentada/config
+END
+routes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/puc-aumentada/!svn/ver/583/trunk/pucaumentada/config/routes.rb
+END
+database.yml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/puc-aumentada/!svn/ver/229/trunk/pucaumentada/config/database.yml
+END
+application.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/puc-aumentada/!svn/ver/452/trunk/pucaumentada/config/application.rb
+END
+boot.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/puc-aumentada/!svn/ver/2/trunk/pucaumentada/config/boot.rb
+END
+environment.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/puc-aumentada/!svn/ver/452/trunk/pucaumentada/config/environment.rb
+END
+gmaps_api_key.yml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/puc-aumentada/!svn/ver/40/trunk/pucaumentada/config/gmaps_api_key.yml
+END
+deploy.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/puc-aumentada/!svn/ver/626/trunk/pucaumentada/config/deploy.rb
+END

@@ -1,0 +1,28 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: MyString
+  survey_id: 1
+  question_id: 1
+  answer: MyText
+
+two:
+  user_id: MyString
+  survey_id: 1
+  question_id: 1
+  answer: MyText
+
+# == Schema Information
+#
+# Table name: answers
+#
+#  id          :integer         not null, primary key
+#  id_user     :string(255)
+#  id_survey   :integer
+#  id_question :integer
+#  answer      :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#  group       :integer
+#
+
